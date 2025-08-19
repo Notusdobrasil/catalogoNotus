@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="br.com.notusdobrasilCatalogo" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Notus</name>
+    <description>App feito por Notus do Brasil</description>
+    <author email="contato@notus.ind.br" href="https://www.notus.ind.br">
+        Notus Sistemas Térmicos do Brasil
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    
+    <!-- Ícone global para o aplicativo -->
+    <icon src="res/icon.png" />
+    
+    <!-- Preferências globais para o splash screen -->
+    <preference name="SplashScreenDelay" value="3000" />
+    <preference name="AndroidWindowSplashScreenScaleMode" value="true" />
+    
+    <platform name="android">
+        <preference name="AndroidWindowSplashScreenAnimatedIcon" value="res/logo.png" />
+        <preference name="AndroidWindowSplashScreenBackground" value="#134596" />
+        
+    </platform>
+    
+    <platform name="ios">
+        <!-- Preferências específicas para iOS podem ser adicionadas aqui -->
+    </platform>
+</widget>

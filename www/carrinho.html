@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/styleCarrinho.css"/>
+    <link rel="stylesheet" href="./styles/placa-styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="./image/icone-logosite-quadrado-mask1.svg" type="image/x-icon">
+    <title>Carrinho</title>
+    <style>
+    /* Overlay de loading */
+    #loadingOverlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    .spinner {
+      border: 4px solid rgba(0,0,0,0.1);
+      border-top: 4px solid #134596;
+      border-radius: 50%;
+      width: 40px; height: 40px;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Esconde conteúdo até a checagem */
+    #contentContainer {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loadingOverlay">
+    <div class="spinner"></div>
+  </div>
+
+  <div id="contentContainer" class="contentContainer">
+   <header class="header-container">
+
+        <nav id="nav-topo" class="nav-contacts">
+            <div class="header-redessociais">
+                <a href="https://www.instagram.com/notusdobrasil" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            
+            <div id="google_translate_element"></div>
+
+            
+
+            <div class="header-bandeiras">    
+                <div class="flags">
+                    <img src="image/br.png" alt="Português" id="pt">
+                    <img src="image/es.png" id="es" alt="es">
+                    <img src="image/us.png" alt="English" id="en">
+                </div>
+            </div>
+
+        </nav>
+        <nav id="nav-fixo" class="nav-navegacao">
+
+            <div>
+                <a href="index.html" style="cursor:pointer;">
+                    <img class="apresentacao__image" src="./image/logo.png"></a>
+            </div>
+
+            <div class="header-busca">
+                <form id="searchFormIndex" class="search-wrapper">
+                <input
+                    type="text"
+                    id="searchInputIndex"
+                    name="search"
+                    placeholder="Buscar"
+                    required
+                />
+                <button type="submit" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </form>
+                <i class="icon-filter fa-solid fa-filter" onclick="toggleFiltroAvancado()" ><p >Filtros</p></i>
+            </div>
+
+            <span class="hamburguer" id="hamburguer-menu">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+            <div class="menu_lateral" id="menu-lateral">
+                    <a class="link_menu" href="todosprodutos.html">Todos Produtos</a>
+                    <div class="dropdown">
+                        <a class="link_menu_lateral">Categorias&nbsp;<i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador">Radiador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=intercooler">Intercooler</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=gmv">GMV</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=eletroventilador">Eletroventilador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=condensador">Condensador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=evaporadora">Evaporadora</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo motor">Radiador de óleo motor</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo transmissão">Radiador de óleo transmissão</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de aquecimento">Radiador de aquecimento </a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+                    <a id="userLink" href="login.html" style="font-size:30px; cursor:pointer; position:relative;">
+                    <i id="userIcon" class="fa-solid fa-user" style="color: #134596;"></i>
+                    </a>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenuCarrinho()">
+                        <i style="font-size:30px;cursor:pointer" class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenu()">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+            </div>
+
+            <div id="menuoculto2" class="menuoculto2">
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Montadoras</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('montadoras')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchMontadoras"
+          placeholder="Buscar montadoras..."
+          onInput="filterCheckboxesMontadoras()"
+          style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer" class="checkbox-container"></div>
+  </div>
+
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Categorias</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('categorias')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchCategorias"
+          placeholder="Buscar categorias..."
+          onInput="filterCheckboxesCategorias()"
+          style=" padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer2" class="checkbox-container"></div>
+  </div>
+
+  <!-- botões de ação -->
+  <div class="menuoculto2-actions">
+    <button
+      type="button"
+      class="buscar-btn"
+      onclick="fecharNav2()"
+    >
+      🔎
+    </button>
+    <button
+      type="button"
+      class="fechar-btn"
+      onclick="apenasFecharNav2()"
+    >
+      ×
+    </button>
+  </div>
+</div>
+        </nav>
+    </header>
+
+    <!-- Filtro Avançado -->
+    <div id="filtroAvancado" class="filtro-avancado" style="display: none;">
+        <div class="filtro-avancado-header">
+            <span>FILTRO AVANÇADO</span>
+        </div>
+        <div class="filtro-avancado-content">
+            <div class="filtro-row">
+                <!-- Accordion para Tipo de Produto (Categoria) -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('categoria')">
+                        <span>TIPO DE PRODUTO</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-categoria">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar tipo de produto..." id="search-categoria" oninput="filtrarOpcoes('categoria', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-categoria">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion para Montadora -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('montadora')">
+                        <span>MONTADORA</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-montadora">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar montadora..." id="search-montadora" oninput="filtrarOpcoes('montadora', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-montadora">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campos de Ano e Busca Geral -->
+                <input type="number" id="filtroAnoInicio" placeholder="ANO INÍC" class="filtro-input-ano" min="1900" max="2030">
+                <input type="number" id="filtroAnoFim" placeholder="ANO FIM" class="filtro-input-ano" min="1900" max="2030">
+                
+                <!-- Dropdown para seleção de campo de busca -->
+                <div class="filtro-busca-container">
+                    <div class="filtro-campo-accordion">
+                        <div class="filtro-campo-header" onclick="toggleCampoAccordion()">
+                            <span id="campo-selecionado">BUSCAR EM</span>
+                            <i class="fa-solid fa-chevron-down filtro-campo-icon"></i>
+                        </div>
+                        <div class="filtro-campo-content" id="filtro-campo-dropdown">
+                            <div class="filtro-campo-list">
+                                <div class="filtro-campo-item" onclick="selecionarCampo('todos', 'BUSCAR EM')">TODOS</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('categoria', 'CATEGORIA')">CATEGORIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('montadora', 'MONTADORA')">MONTADORA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('modelo', 'MODELO')">MODELO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('codigo', 'CÓDIGO')">CÓDIGO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('referencia', 'REFERÊNCIA')">REFERÊNCIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('descricao', 'DESCRIÇÃO')">DESCRIÇÃO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('ano', 'ANO')">ANO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('placa', 'PLACA')">PLACA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="filtroBuscaGeral" placeholder="Código, descrição, modelo do veículo" class="filtro-input-wide">
+                </div>
+                
+                <!-- Botões -->
+                <button type="button" id="btnLimparFiltros" class="filtro-btn-limpar">LIMPAR</button>
+                <button type="button" id="btnBuscarAvancado" class="filtro-btn-buscar">BUSCAR</button>
+            </div>
+        </div>
+    </div>
+
+    <aside id="menuoculto" class="menuoculto">
+        <button class="btnFechar" onclick="fecharNav()" aria-label="Fechar menu">&times;</button>
+        
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-heart" style="font-size: 20px; color: #fff;"></i>
+                Meus Favoritos
+            </div>
+
+            <div id="cart-items" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="toggleAllButton" onclick="toggleAllFavorites()" class="action-button">
+                    <i class="fa-solid fa-check-double"></i>
+                    Marcar Todos
+                </button>
+                <button id="send-to-cart" onclick="sendFavoritesToCart()" class="action-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Enviar ao carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Menu oculto para o carrinho -->
+    <aside id="menuoculto-carrinho" class="menuoculto">      
+        <button class="btnFechar" onclick="fecharNavCarrinho()" aria-label="Fechar menu">&times;</button>
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-cart-shopping" style="color: #fff; font-size: 20px;"></i>
+                Meu Carrinho
+            </div>
+            
+            <div id="cart-items-carrinho" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="checkoutButtonCarrinho" onclick="window.location.href =
+                    `carrinho.html`;" class="action-button">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    Ir para o Carrinho
+                </button>
+                <button id="limpar-carrinho" onclick="limparCarrinho()" class="action-button">
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar Carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+    
+    <main class="container my-5" style="max-width: 1200px; min-width: 340px;">
+      <div class="row gx-4">
+        <!-- COLUNA ESQUERDA: ITENS DO CARRINHO -->
+        <div class="col-lg-8 align-self-start" style="height: 650px; display: flex; flex-direction: column;">
+          <a href="todosprodutos.html" class="text-decoration-none mb-3 d-inline-block">
+            <i class="fa fa-arrow-left"></i> Continue comprando
+          </a>
+          <div class="cart-header mb-4">
+            <h2>.</h2>
+            <h2>Carrinho de Compras</h2>
+            <small class="text-muted">Você tem <strong id="summary-qty-small">0</strong> itens no seu carrinho</small>
+          </div>
+          <div id="cart-page-items" style="flex: 1 1 0; overflow-y: auto; min-height: 0;"></div>
+        </div>
+
+        <!-- COLUNA DIREITA: FORMULÁRIO DE ORÇAMENTO -->
+        <div class="col-lg-4 d-flex flex-column justify-content-center align-items-center">
+          <div class="card-orcamento">
+            <h4 class="card-title mb-4">Fazer orçamento</h4>
+            <form id="quoteForm">
+              <div class="mb-3">
+                <label class="form-label">Nome</label>
+                <input type="text" id="inputName" class="form-control" placeholder="Nome">
+              </div>
+              <div class="mb-3">
+                <label class="form-label">CNPJ</label>
+                <input type="text" id="inputCnpj" class="form-control" placeholder="CNPJ">
+              </div>
+              <div class="d-flex mb-4">
+                <div class="me-3 flex-fill">
+                  <label class="form-label">Cidade</label>
+                  <input type="text" id="inputCidade" class="form-control" placeholder="Cidade">
+                </div>
+                <div class="flex-fill">
+                  <label class="form-label">Empresa</label>
+                  <input type="text" id="inputEmpresa" class="form-control" placeholder="Empresa">
+                </div>
+              </div>
+
+              <!-- Resumo dinâmico -->
+              <div class="d-flex justify-content-between mb-2">
+                <span>Quantidade de itens</span><span id="summary-qty">0</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Seu caminhão</span><span id="summary-truck">—</span>
+              </div>
+              <div class="d-flex justify-content-between mb-4 fw-bold">
+                <span>Cubagem</span><span id="summary-cubagem">—</span>
+              </div>
+
+              <button type="button" id="sendQuoteBtn" class="btn btn-light w-100">
+                Enviar Orçamento &rarr;
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="container-footer">
+        <div class="footer-containersub">
+            <div class="footer-containersub-div">
+                <h3><strong>Menu</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="https://notus.ind.br/sobre-notus/">Sobre Notus</a></li>
+                    <li><a href="https://notus.ind.br/vagas-abertas/">Trabalhe Conosco</a></li>
+                    <li><a href="https://notus.ind.br/garantia/">Garantia</a></li>
+                    <li><a href="https://notus.ind.br/representantes/">Representantes</a></li>
+                    <li><a href="https://notus.ind.br/contato/">Contato</a></li>
+                    <li><a href="https://catalogonotus.vipsoft.com.br/" target="_blank">Catálogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Lista de Produtos</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="todosprodutos.html?categoria=radiador">Radiador</a></li>
+                    <li><a href="todosprodutos.html?categoria=intercooler">Intercooler</a></li>
+                    <li><a href="todosprodutos.html?categoria=gmv">GMV</a></li>
+                    <li><a href="todosprodutos.html?categoria=eletroventilador">Eletroventilador</a></li>
+                    <li><a href="todosprodutos.html?categoria=condensador">Condensador</a></li>
+                    <li><a href="todosprodutos.html?categoria=evaporadora">Evaporadora</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo motor">Radiador de óleo motor</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo transmissão">Radiador de óleo transmissão</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de aquecimento">Radiador de aquecimento </a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Fale Conosco</strong></h3>
+                <ul class="footer-lista">
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1997</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1998</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 2413-6550</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-envelope"></i></i><a href="mailto:contato@notus.ind.br">contato@notus.ind.br</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-location-dot" style="color:#134596"></i></i><a href="https://www.google.com/maps/place/Notus+Sistemas+T%C3%A9rmicos+do+Brasil/@-23.1645049,-47.2757049,1035m/data=!3m1!1e3!4m6!3m5!1s0x94cf4d1be8a34e01:0xf8318f2901fc4d14!8m2!3d-23.1645659!4d-47.2729364!16s%2Fg%2F11frdtvtn6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">Rua Projetada, 630, Salto/SP, 13329-429</a></li>
+                </ul>
+                <div class="footer-redessociais">
+                    <a href="https://www.instagram.com/notusdobrasil" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div  class="footer-faixa">
+            <div">
+                <p>Notus Sistemas Térmicos Do Brasil © Todos os direitos reservados</p>
+            </div>
+            <div class="faixa-amarela">
+            </div>
+            <div class="faixa-verde">
+            </div>
+        </div>
+  </div>
+
+  <!-- Scripts essenciais -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts para filtro avançado e busca por placa -->
+  <script src="./javascript/script.js"></script>
+  <script src="./javascript/config-placa.js"></script>
+  <script src="./javascript/placa-api.js"></script>
+  <script src="./javascript/submenu-dinamico.js"></script>
+  <script src="./javascript/traducao.js"></script>
+  <!-- REMOVER: <script src="./firebase-config.js"></script> -->
+  
+  <script>
+// Funções essenciais para o carrinho
+function toggleMenuCarrinho() {
+    const menuOculto = document.getElementById("menuoculto-carrinho");
+    if (menuOculto) {
+        if (menuOculto.style.width === '40%' || menuOculto.style.width === '100%') {
+            fecharNavCarrinho();
+        } else {
+            abrirNavCarrinho();
+        }
+    }
+}
+
+function abrirNavCarrinho() {
+    const menuOculto = document.getElementById("menuoculto-carrinho");
+    if (menuOculto) {
+        menuOculto.style.width = (window.innerWidth <= 768) ? '100%' : '40%';
+        document.body.style.overflowX = 'hidden';
+        renderCarrinho();
+    }
+}
+
+function fecharNavCarrinho() {
+    const menuOculto = document.getElementById("menuoculto-carrinho");
+    if (menuOculto) {
+        menuOculto.style.width = '0';
+        document.body.style.overflowX = 'auto';
+    }
+}
+
+function renderCarrinho() {
+    const cartContainer = document.getElementById('cart-items-carrinho');
+    if (!cartContainer) return;
+
+    cartContainer.innerHTML = '';
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+    if (cart.length === 0) {
+        cartContainer.innerHTML = '<p style="text-align: center; color: var(--cor-terciaria);">Seu carrinho está vazio</p>';
+        return;
+    }
+
+    cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'cart-item';
+        div.innerHTML = `
+            <div class="favorite-item-content">
+                <img src="${item.image || './image/radiador.png'}" alt="${item.name || ''}" style="max-width: 100px; min-width: 100px; max-height: 100px; min-height: 100px; object-fit: contain; border-radius: 5px;">
+                <span>${item.name || 'Produto'}</span>
+                <div class="quantity-controls">
+                    <input type="number" value="${item.quantity || 1}" min="1" onchange="updateCartQuantity(${item.id}, this.value)" style="width: 70px; text-align: center; background:#fff; padding: 2px; border-radius: 7px;">
+                </div>
+                <button onclick="removeFromCart(${item.id})" class="remove-button">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
+        `;
+        cartContainer.appendChild(div);
+    });
+}
+
+function updateCartQuantity(itemId, newQuantity) {
+    if (newQuantity < 1) return;
+    
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const item = cart.find(item => item.id === itemId);
+    
+    if (item) {
+        item.quantity = newQuantity;
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCarrinho();
+        renderCartPage(); // Atualiza a página principal também
+    }
+}
+
+function removeFromCart(itemId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart = cart.filter(item => item.id !== itemId);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    renderCarrinho();
+    renderCartPage(); // Atualiza a página principal também
+}
+
+function limparCarrinho() {
+    localStorage.setItem('cart', JSON.stringify([]));
+    renderCarrinho();
+    renderCartPage(); // Atualiza a página principal também
+}
+
+// Função para tradução Google
+function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+        {pageLanguage: 'pt', includedLanguages: 'pt,en,es'},
+        'google_translate_element'
+    );
+}
+
+// Funções específicas para o filtro avançado no carrinho
+function aplicarFiltroAvancadoCarrinho() {
+    const params = new URLSearchParams();
+    
+    // Termo de busca geral
+    const termo = document.getElementById('filtroBuscaGeral')?.value?.trim();
+    if (termo) {
+        params.append('search', termo);
+        
+        // Campo selecionado
+        const campo = window.campoSelecionado || 'todos';
+        if (campo !== 'todos') {
+            params.append('campo', campo);
+        }
+    }
+    
+    // Filtros de categoria selecionados
+    const categoriasChecked = document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked');
+    categoriasChecked.forEach(checkbox => {
+        params.append('categoria', checkbox.value);
+    });
+    
+    // Filtros de montadora selecionados
+    const montadorasChecked = document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked');
+    montadorasChecked.forEach(checkbox => {
+        params.append('montadora', checkbox.value);
+    });
+    
+    // Filtros de ano
+    const anoInicio = document.getElementById('filtroAnoInicio')?.value;
+    const anoFim = document.getElementById('filtroAnoFim')?.value;
+    if (anoInicio) params.append('anoInicio', anoInicio);
+    if (anoFim) params.append('anoFim', anoFim);
+    
+    // Redirecionar para todosprodutos.html com os filtros
+    const url = `todosprodutos.html?${params.toString()}`;
+    window.location.href = url;
+    
+    // Fechar filtro
+    toggleFiltroAvancado();
+}
+
+function limparFiltrosCarrinho() {
+    // Limpar campo de busca
+    const campoBusca = document.getElementById('filtroBuscaGeral');
+    if (campoBusca) campoBusca.value = '';
+    
+    // Limpar anos
+    const anoInicio = document.getElementById('filtroAnoInicio');
+    const anoFim = document.getElementById('filtroAnoFim');
+    if (anoInicio) anoInicio.value = '';
+    if (anoFim) anoFim.value = '';
+    
+    // Desmarcar categorias
+    document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+    
+    // Desmarcar montadoras
+    document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+    
+    // Resetar campo selecionado
+    if (typeof selecionarCampo === 'function') {
+        selecionarCampo('todos', 'BUSCAR EM');
+    }
+}
+
+// Função para enviar orçamento via WhatsApp
+function sendQuoteToWhatsApp() {
+  const nome = document.getElementById('inputName').value.trim();
+  const cnpj = document.getElementById('inputCnpj').value.trim();
+  const cidade = document.getElementById('inputCidade').value.trim();
+  const empresa = document.getElementById('inputEmpresa').value.trim();
+  const qtd = document.getElementById('summary-qty').textContent.trim();
+  const truck = document.getElementById('summary-truck').textContent.trim();
+  const cubagem = document.getElementById('summary-cubagem').textContent.trim();
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let itensTexto = '';
+  if (cart.length > 0) {
+    itensTexto = '\nItens do carrinho:';
+    cart.forEach(item => {
+      const codigo = item.codigo || item.name || 'N/D';
+      itensTexto += `\n• Código: ${codigo} | Quantidade: ${item.quantity}`;
+    });
+  } else {
+    itensTexto = '\nItens do carrinho: Nenhum item.';
+  }
+  let mensagem = `Olá! Gostaria de solicitar um orçamento.\n`;
+  mensagem += `Nome: ${nome}\n`;
+  mensagem += `CNPJ: ${cnpj}\n`;
+  mensagem += `Cidade: ${cidade}\n`;
+  mensagem += `Empresa: ${empresa}\n`;
+  mensagem += `Quantidade de itens: ${qtd}\n`;
+  mensagem += `Meu caminhão: ${truck}\n`;
+  mensagem += `Cubagem: ${cubagem}`;
+  mensagem += itensTexto;
+  const url = `https://web.whatsapp.com/send?phone=5511942138664&text=${encodeURIComponent(mensagem)}`;
+  window.open(url, '_blank');
+}
+
+// Função para renderizar o carrinho e ativar botões de remover
+function renderCartPage() {
+  const container = document.getElementById('cart-page-items');
+  if (!container) return;
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  container.innerHTML = '';
+  if (cart.length === 0) {
+    container.innerHTML = '<p style="text-align:center; color:#134596;">Seu carrinho está vazio</p>';
+    return;
+  }
+  let totalQty = 0;
+  cart.forEach(item => {
+    totalQty += item.quantity || 1;
+    const div = document.createElement('div');
+    div.className = 'cart-item-page';
+    div.innerHTML = `
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <img src="${item.image || './image/radiador.png'}" alt="${item.name || ''}" />
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="fw-bold" style="font-size: 1.1rem;">${item.codigo || item.name || 'Sem código'}</div>
+          <div style="color: #fff; font-size: 0.95rem;">Quantidade: <input type="number" min="1" value="${item.quantity || 1}" data-id="${item.id}" class="quantity-input" style="width:60px;display:inline-block; border-radius:6px; border:1px solid #ccc; padding:2px 6px; text-align:center;"></div>
+        </div>
+      </div>
+      <button class="remove-btn" data-id="${item.id}" style="background:#ff2f2f; color:#fff; border:none; border-radius:5px; width:40px; height:40px; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-left:10px;"><i class="fa fa-trash"></i></button>
+    `;
+    container.appendChild(div);
+  });
+  // atualiza resumo
+  const qtyEl = document.getElementById('summary-qty');
+  if (qtyEl) qtyEl.innerText = totalQty;
+  const qtySmallEl = document.getElementById('summary-qty-small');
+  if (qtySmallEl) qtySmallEl.innerText = totalQty;
+  // listeners para remover
+  container.querySelectorAll('.remove-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const id = parseInt(this.getAttribute('data-id'));
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart = cart.filter(item => item.id !== id);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      renderCartPage();
+    });
+  });
+  // listeners para quantidade
+  container.querySelectorAll('.quantity-input').forEach(input => {
+    input.addEventListener('change', function() {
+      const id = parseInt(this.getAttribute('data-id'));
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const item = cart.find(i => i.id === id);
+      if (item) {
+        item.quantity = Math.max(1, parseInt(this.value) || 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCartPage();
+      }
+    });
+  });
+}
+
+// Event listener para o botão de orçamento
+document.addEventListener('DOMContentLoaded', () => {
+    const sendQuoteBtn = document.getElementById('sendQuoteBtn');
+    if (sendQuoteBtn) {
+        sendQuoteBtn.addEventListener('click', sendQuoteToWhatsApp);
+    }
+
+    // Event listeners para o filtro avançado
+    const btnBuscar = document.getElementById('btnBuscarAvancado');
+    if (btnBuscar) {
+        btnBuscar.addEventListener('click', (e) => {
+            e.preventDefault();
+            aplicarFiltroAvancadoCarrinho();
+        });
+    }
+
+    const btnLimpar = document.getElementById('btnLimparFiltros');
+    if (btnLimpar) {
+        btnLimpar.addEventListener('click', limparFiltrosCarrinho);
+    }
+
+    // Enter nos campos de input do filtro
+    ['filtroAnoInicio', 'filtroAnoFim', 'filtroBuscaGeral'].forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+            input.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    aplicarFiltroAvancadoCarrinho();
+                }
+            });
+        }
+    });
+
+    // Event listener para fechar dropdown quando clicar fora
+    document.addEventListener('click', (e) => {
+        const campoAccordion = document.querySelector('.filtro-campo-accordion');
+        if (campoAccordion && !campoAccordion.contains(e.target)) {
+            const header = document.querySelector('.filtro-campo-header');
+            const content = document.querySelector('.filtro-campo-content');
+            if (header && content) {
+                header.classList.remove('active');
+                content.classList.remove('active');
+            }
+        }
+    });
+
+    // Configurar busca do header para redirecionar
+    const searchForm = document.getElementById('searchFormIndex');
+    if (searchForm) {
+        searchForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const searchTerm = document.getElementById('searchInputIndex').value.trim();
+            if (searchTerm) {
+                window.location.href = `todosprodutos.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+    }
+
+    // Carregar opções do filtro avançado
+    carregarOpcoesDropdownCarrinho();
+});
+
+// Função para abrir/fechar filtro avançado
+function toggleFiltroAvancado() {
+    const filtro = document.getElementById('filtroAvancado');
+    
+    if (filtro.classList.contains('show')) {
+        // Esconder com animação
+        filtro.classList.remove('show');
+        setTimeout(() => {
+            filtro.style.display = 'none';
+        }, 400);
+    } else {
+        // Mostrar com animação
+        filtro.style.display = 'block';
+        filtro.offsetHeight;
+        filtro.classList.add('show');
+        carregarOpcoesDropdownCarrinho();
+    }
+}
+
+// Função para alternar accordions
+function toggleAccordion(tipo) {
+    const accordion = document.getElementById(`accordion-${tipo}`);
+    const header = accordion?.previousElementSibling;
+    
+    if (accordion && header) {
+        const isOpen = accordion.classList.contains('active');
+        
+        // Fechar todos os accordions
+        document.querySelectorAll('.filtro-accordion-content').forEach(acc => {
+            acc.classList.remove('active');
+        });
+        document.querySelectorAll('.filtro-accordion-header').forEach(head => {
+            head.classList.remove('active');
+        });
+        
+        // Abrir o clicado se não estava aberto
+        if (!isOpen) {
+            accordion.classList.add('active');
+            header.classList.add('active');
+        }
+    }
+}
+
+// Função para alternar dropdown de campo
+function toggleCampoAccordion() {
+    const header = document.querySelector('.filtro-campo-header');
+    const content = document.querySelector('.filtro-campo-content');
+    
+    if (header && content) {
+        header.classList.toggle('active');
+        content.classList.toggle('active');
+    }
+}
+
+// Função para selecionar campo de busca
+function selecionarCampo(campo, texto) {
+    window.campoSelecionado = campo;
+    
+    const elementoCampo = document.getElementById('campo-selecionado');
+    if (elementoCampo) {
+        elementoCampo.textContent = texto;
+    }
+    
+    const inputFiltro = document.getElementById('filtroBuscaGeral');
+    if (inputFiltro && campo === 'placa') {
+        inputFiltro.placeholder = 'Digite a placa do veículo (ABC-1234)';
+    } else if (inputFiltro) {
+        inputFiltro.placeholder = 'Código, descrição, modelo do veículo';
+    }
+    
+    // Fechar dropdown
+    toggleCampoAccordion();
+}
+
+// Função para carregar opções do dropdown
+async function carregarOpcoesDropdownCarrinho() {
+    try {
+        const response = await fetch('./conversor/produtos.json');
+        const produtos = await response.json();
+        
+        // Extrair categorias únicas
+        const categorias = [...new Set(produtos.map(p => p.categoria).filter(Boolean))].sort();
+        
+        // Extrair montadoras únicas
+        const montadoras = [...new Set(produtos.map(p => p.montadora).filter(Boolean))].sort();
+        
+        // Preencher categorias
+        const listaCategorias = document.getElementById('lista-categoria');
+        if (listaCategorias) {
+            listaCategorias.innerHTML = categorias.map(cat => `
+                <label class="filtro-checkbox-item">
+                    <input type="checkbox" value="${cat}">
+                    <span>${cat}</span>
+                </label>
+            `).join('');
+        }
+        
+        // Preencher montadoras
+        const listaMontadoras = document.getElementById('lista-montadora');
+        if (listaMontadoras) {
+            listaMontadoras.innerHTML = montadoras.map(mont => `
+                <label class="filtro-checkbox-item">
+                    <input type="checkbox" value="${mont}">
+                    <span>${mont}</span>
+                </label>
+            `).join('');
+        }
+        
+    } catch (error) {
+        console.error('Erro ao carregar opções do filtro:', error);
+    }
+}
+
+// Função para filtrar opções na busca
+function filtrarOpcoes(tipo, valor) {
+    const lista = document.getElementById(`lista-${tipo}`);
+    if (!lista) return;
+    
+    const items = lista.querySelectorAll('.filtro-checkbox-item');
+    const termoBusca = valor.toLowerCase();
+    
+    items.forEach(item => {
+        const texto = item.textContent.toLowerCase();
+        item.style.display = texto.includes(termoBusca) ? 'flex' : 'none';
+    });
+}
+    </script>
+    
+    <!-- Firebase Module Script - DEVE ser o último -->
+    <script type="module">
+        import { auth } from "./firebase-config.js";
+        import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const loadingOverlay = document.getElementById("loadingOverlay");
+            const contentContainer = document.getElementById("contentContainer");
+            
+            // Mostra o spinner inicialmente
+            if (loadingOverlay) loadingOverlay.style.display = "flex";
+            if (contentContainer) contentContainer.style.display = "none";
+
+            // Timeout de segurança
+            const timeoutId = setTimeout(() => {
+                window.location.replace("login.html");
+            }, 5000);
+
+            // Verifica se já há usuário logado imediatamente
+            if (auth.currentUser && auth.currentUser.emailVerified) {
+                clearTimeout(timeoutId);
+                showContent();
+                return;
+            }
+
+            // Verificação de autenticação
+            const unsubscribe = onAuthStateChanged(auth, user => {
+                clearTimeout(timeoutId);
+                
+                if (!user || !user.emailVerified) {
+                    unsubscribe();
+                    window.location.replace("login.html");
+                    return;
+                }
+                
+                // Usuário autenticado
+                unsubscribe();
+                showContent();
+                
+            }, (error) => {
+                clearTimeout(timeoutId);
+                window.location.replace("login.html");
+            });
+
+            // Função para mostrar o conteúdo
+            function showContent() {
+                if (loadingOverlay) loadingOverlay.style.display = "none";
+                if (contentContainer) contentContainer.style.display = "block";
+                
+                // Renderiza o carrinho
+                setTimeout(() => {
+                    if (typeof renderCartPage === 'function') {
+                        renderCartPage();
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

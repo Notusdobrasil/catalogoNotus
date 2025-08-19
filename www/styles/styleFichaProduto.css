@@ -1,0 +1,674 @@
+@import url(../styles/style.css);
+
+.container-infor-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* opcional: ajuste fino nos conteúdos internos */
+.gallery {
+  max-width: 100%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    gap: 10px; 
+    max-width: 800px; 
+}
+
+/* Estilo da imagem principal */
+
+.thumbnail-container {
+    display: flex;
+    position: relative;
+    margin-left: 0; /* Remove a margem lateral extra */
+    display: flex;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #134596;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 5%; 
+    max-width: 1px; 
+}
+
+/* Primeiro Grid: Galeria de imagens */
+.gallery {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 10px;
+}
+
+.main-image {
+    max-width: 80%;
+    display: block;
+    object-fit: cover;
+    object-fit: cover;
+    border: 3px solid #134596;
+    border-radius: 5%;
+    display: block;
+    margin: 1 auto;
+    justify-content: center;
+}
+
+.carousel-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-cards .card-two {
+    flex: 0 0 calc(33% - 20px);
+    max-width: 300px;
+    height: 480px; /* Aumentei a altura do card */
+    margin: 10px;
+    background-color: var(--cor-terciaria);
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #134596;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Segundo Grid: Grid de 12 linhas */
+
+.side-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-rows: auto 4px 4px repeat(1, 1fr) auto;
+}
+
+.grid-item {
+    background-color: #fafcff; 
+    border: 1px solid #deeaff;
+    align-items: center;
+    padding: 1%;
+    align-items: center;
+    align-items: self-start;
+    text-align: center;
+    font-weight: 450;
+}
+
+
+.item1  {
+    grid-column: 1 / -3;
+    padding: 3%;
+    text-align: center;
+    
+
+}
+
+.item2 {
+    grid-column: 3 / -1;
+    padding: 3%;
+    text-align: center;
+
+}
+
+.item3 {
+    grid-column: 1 / -3;
+    padding: 3%;
+    text-align: center;
+
+
+}
+
+.item4 {
+    grid-column: 3 / -1;
+    padding: 3%;
+    text-align: center;
+
+
+}
+
+.text-bold {
+    font-weight: 600;
+    font-size: 1.2rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    align-items: center;
+}
+
+.text-bold2 {
+    display: flex;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+
+
+.line-green, .line-yellow {
+    grid-column: 1 / -1; 
+    margin: 0;
+    padding: 0;
+    border: 0%;
+    border: none;
+
+}
+
+.line-green {
+    background-color: #FFD700; 
+    border: none;
+}
+
+.line-yellow {
+    background-color:  #009739; 
+    border: none;
+}
+
+
+.container-infor-produtos {
+    margin-top: 3rem;
+    display: flex;
+    padding: 0% 1%;
+    justify-content: center;
+}
+
+
+.side-grid > .grid-item:first-child {
+    grid-column: 1 / -1;
+    border: none;
+}
+
+.side-grid > .grid-item:last-child {
+    grid-column: 1 / -1; 
+}
+
+
+
+
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+
+.background-card {
+    display: flex;
+    max-width: 800px;
+    background-color: #134596;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px 20px 0px 0px;
+    font-size: 30px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.background-card-footer {
+    display: flex;
+    max-width: 800px;
+    background-color: #134596;
+    height: 8px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 0px 20px 20px;
+    font-weight: 600;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.texto-titulo {
+    color: #ffffff;
+    font-size: clamp(0.3rem, 10vw, 1.3rem);
+}
+
+.background-gray {
+    background-color: #eff5ff;
+}
+
+.background-blue {
+    background-color: hsl(216, 100%, 94%);
+}
+
+
+
+
+
+/*------------------------------------------*/
+
+
+
+
+.linha-cinza {
+    background-color: #d1d1d1;
+}
+
+
+.codigos-dos-produtos {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 1.5rem;
+}
+
+/* --------------  TABELA --------------- */
+
+#produtoTabela {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    max-width: 100vw;
+    scrollbar-width: thin;
+    scrollbar-color: #134596 #e6e6e6;
+}
+#produtoTabela::-webkit-scrollbar {
+    height: 8px;
+    background: #e6e6e6;
+}
+#produtoTabela::-webkit-scrollbar-thumb {
+    background: #134596;
+    border-radius: 4px;
+}
+#produtoTabela table {
+    min-width: 700px;
+    border-collapse: collapse;
+    display: table; /* volta ao padrão para ocupar 100% */
+    white-space: nowrap;
+    box-sizing: border-box;
+    max-width: none;
+}
+#produtoTabela th, #produtoTabela td {
+    border: 0px solid #ccc;
+    padding: 8px;
+    text-align: center;
+    width: 150px;
+    height: 30px;
+    white-space: nowrap;
+}
+
+#produtoTabela th {
+    background-color: #134596;
+    color: #ffffff;
+}
+
+.produtos-relacionados-plus {
+    text-align: center;
+    font-size: 40px;
+    padding: 2rem 0% 1.2rem 0%;
+}
+
+.aplicacao-do-produto {
+    text-align: center;
+    font-size: 40px;
+    padding: 2rem 0% 1.2rem 0%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 6px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.row-white {
+    background-color: #f1f1f1;
+}
+
+.row-gray {
+    background-color: #cacaca;
+}
+
+/* ------------------------fim tabela  --------------------------------*/
+
+/*-------------------------responsivo---------------------------------*/
+
+@media (max-width: 1920px) {
+.side-grid-response {
+    margin: 0 40px;
+    display: none;
+}
+}
+
+@media (max-width: 790px) {
+.side-grid {
+    display: none;
+}
+
+
+.side-grid-response {
+    display: contents;
+    
+}
+.texto-titulo {
+    font-size: 15px;
+}
+}
+
+/* ------------- tabela para aparelhos menores ------------------*/
+
+@media (max-width: 2560px) {
+    .side-grid-response {
+        display: none;
+    }
+
+@media screen and (max-width: 1280px) {
+    #produtoTabela table {
+        width: 150%; 
+    }
+}
+
+@media screen and (max-width: 886px) {
+    #produtoTabela table {
+        width: 200%; 
+    }
+
+
+@media screen and (max-width: 425px) {
+    #produtoTabela table {
+        width: 400%; 
+    }
+}
+@media screen and (max-width: 320px) {
+    #produtoTabela table {
+        width: 500%; 
+    }
+}
+}
+}
+
+@media (max-width: 886px) {
+
+        .secao-relacionados p {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-image-container {
+            margin-top: 20px;
+        }
+
+        .secao-tabelas h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .codigos-dos-produtos {
+            margin-top: 20px;
+        }
+
+        .text-bold2 {
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .grid-item {
+            padding: 10px;
+            text-align: center;
+        }
+
+        .icons-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px; /* Espaçamento entre os ícones */
+            margin: auto;
+        }
+
+        .separacaocelular {
+            margin: 0 auto;
+            background-color: #134596;
+        }
+
+        .container-infor-produtos {
+          flex-direction: column;
+          width: 100%;          /* ocupa 100% da largura */
+          padding: 0 10px;      /* adiciona padding horizontal */
+          box-sizing: border-box;
+          margin: 0 auto;
+        }
+        .gallery, .background-grid {
+          width: 100%;
+          max-width: 100%;
+          flex: none;
+          padding: 0;
+          margin: 0;
+        }
+        .main-image {
+          width: 100%;
+          height: auto;
+            margin: 0 auto; /* Centraliza a imagem */
+        }
+        /* Torna tabelas roláveis quando necessário */
+        table {
+          width: 100%;
+          max-width: 100%;  /* Adicionado para evitar arraste horizontal extra */
+          display: block;
+          overflow-x: auto;
+        }
+        /* Ajusta as miniaturas para caber melhor */
+        .thumbnail-container img {
+          width: 100%;
+          max-width: 100px;
+        }
+        /* Exibe a grade mobile */
+        .side-grid-response { 
+          display: block;
+        }
+        /* Ajuste na galeria de imagens para exibir scroll horizontal se houver muitas imagens */
+        .thumbnail-container {
+          display: flex;
+          gap: 10px;
+          overflow-x: auto;
+          white-space: nowrap;
+          padding-bottom: 10px; /* Espaço para a barra de rolagem */
+          margin: 0 auto;
+          max-width: 80%;
+        }
+        .thumbnail-container img {
+          flex: 0 0 auto;
+          /* ...existing code... */
+          max-width: 100px;
+        }
+      }
+      @media (min-width: 886px) {
+        /* Oculta a grade mobile em telas maiores */
+        .side-grid-response { 
+          display: none;
+        }
+      }
+
+/* Container da imagem e do zoom */
+.img-zoom-container {
+  position: relative;
+  display: inline-block;
+}
+/* no styleFichaProduto.css, localize .img-zoom-lens e acrescente pointer-events: none */
+.img-zoom-lens {
+  width:  clamp(80px, 20%, 200px);
+  height: clamp(80px, 20%, 200px);
+  border: 1px solid #000;
+  background-color: rgba(255,255,255,0.4);
+  position: absolute;
+  cursor: none;
+  z-index: 10;
+
+  /* faz o lens “ignorar” cliques e mouseovers, deixando passar para a imagem */
+  pointer-events: none;
+}
+
+.img-zoom-result {
+  /* mínimo 200px, ideal 40vw, máximo 600px */
+  width:  clamp(200px, 40vw, 600px);
+  height: clamp(200px, 40vw, 600px);
+  border: 1px solid #000;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 0;
+  left: calc(100% + 1rem);
+  display: none;  /* vai aparecer só no hover/container JS */
+  z-index: 5;
+}
+
+.img-zoom-lens,
+.img-zoom-result {
+  /* invisível mas com dimensões já computadas */
+  visibility: hidden;
+}
+.img-zoom-container:hover .img-zoom-lens,
+.img-zoom-container:hover .img-zoom-result {
+  visibility: visible;
+}
+
+@media (max-width: 886px) {
+  .img-zoom-lens,
+  .img-zoom-result {
+    display: none !important;    /* sempre oculto em mobile */
+  }
+  .img-zoom-container {
+    cursor: pointer;             /* indica que é clicável */
+  }
+}
+
+.icons-container .fa-heart,
+.icons-container .fa-cart-shopping {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #134596;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: rgba(19, 69, 150, 0.1);
+}
+
+.icons-container .fa-heart.fa-solid {
+    color: red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.icons-container .fa-cart-shopping {
+    color: #134596;
+}
+
+.icons-container .fa-heart:hover,
+.icons-container .fa-cart-shopping:hover {
+    background-color: rgba(19, 69, 150, 0.2);
+}
+
+.modal {
+  position: fixed;
+  margin-top: 50px;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer; /* Indica que o modal é clicável */
+}
+.modal[style*="display: flex"] {
+  display: flex;
+}
+.modal-content {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+  cursor: default; /* Remove o comportamento de clique na imagem */
+}
+
+.modal-close {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  margin-right: 30px;
+  background: transparent;
+  border: none;
+  font-size: 2.5rem;
+  color: #ffffff;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;
+  padding: 0;
+}
+
+.modal-close:hover {
+  color: #ffffff;
+}
+
+.modal-close {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  background: transparent;    /* fundo transparente */
+  border: none;               /* sem borda */
+  font-size: 2.5rem;          /* tamanho grande para facilitar clique */
+  color: #fff;                /* cor branca (ou ajuste conforme seu tema) */
+  line-height: 1;
+  cursor: pointer;
+  z-index: 1001;              /* acima da imagem */
+  padding: 0;                 /* sem padding */
+}
+
+/* Ao passar o mouse, trocar cor (opcional) */
+.modal-close:hover {
+  color: #ddd;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-next-relacionados {
+    display: none;
+  }
+}
+
+@media (max-width: 866px) {
+  .mais-produtos-link {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.carousel-container {
+    padding: 0;
+}
+
+@media (max-width: 886px) {
+  .swiper-button-prev-relacionados,
+  .swiper-button-next-relacionados {
+    display: none !important;
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administração</title>
+    <link rel="stylesheet" href="styles/admin.css">
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="scripts/firebase-config-admin.js"></script>
+    <script src="scripts/admin.js" defer></script>
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <main>
+        <div id="login-panel" class="card">
+            <img class="logo-image" src="logo.svg" alt="Logo">
+            <input type="email" id="email" placeholder="E-mail" required>
+            <input type="password" id="password" placeholder="Senha" required>
+            <button id="login-button" class="btn primary full-width">Entrar</button>
+            <button id="installButton" style="display: none;" class="button-instal"><i class="fas fa-download"></i> Instalar App</button>
+        </div>
+        
+
+        <div id="admin-panel" class="container" style="display: none;">
+            <header class="admin-header">
+                <h2>Painel de Administração</h2>
+                <button id="logout-button" class="btn secondary">
+                    <i class="fas fa-sign-out-alt"></i> Sair
+                </button>
+            </header>
+            <p class="header-description">Gerencie suas mídias e agendamentos para exibição.</p>
+
+            <div class="grid-container">
+                <div class="card-section upload-section">
+                    <h3>Upload de Novas Mídias</h3>
+                    <p>Selecione e envie o arquivo (JPG, PNG, MP4).</p>
+                    <form id="media-form">
+                        <div class="file-drop-area">
+                            <span id="file-msg" class="file-msg">Arraste e solte o arquivo aqui</span>
+                            <input type="file" id="media-file" accept="image/*,video/*">
+                        </div>
+                        <p class="file-name" id="file-name">Nome do arquivo: Nenhum arquivo selecionado</p>
+                        <button type="submit" class="btn primary full-width">
+                            <i class="fas fa-cloud-upload-alt"></i> Fazer Upload
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-section media-list-section">
+                    <h3>Mídias Carregadas</h3>
+                    <div id="media-list" class="list-placeholder">
+                        <p>Carregando mídias...</p>
+                    </div>
+                </div>
+
+                <div class="card-section schedule-section">
+                    <h3>Agendar Mídia para Departamento</h3>
+                    <form id="schedule-form">
+                        <div class="form-group">
+                            <label for="schedule-media">Mídia</label>
+                            <select id="schedule-media" class="form-control">
+                                <option value="">Selecione uma mídia</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-dept">Departamento</label>
+                            <select id="schedule-dept" class="form-control">
+                                <option value="departamento-a">Produção</option>
+                                <option value="departamento-b">Estoque</option>
+                                <option value="departamento-c">Cozinha</option>
+                                <option value="departamento-d">Expedição</option>
+                                <option value="departamento-e">Escritorio</option>
+                                <option value="departamento-f">Ferramentaria</option>
+                                <option value="departamento-g">Departamento G</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-start">Data e hora de início</label>
+                            <input type="datetime-local" id="schedule-start" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-end">Data e hora de fim</label>
+                            <input type="datetime-local" id="schedule-end" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="schedule-order">Ordem de Exibição (Opcional)</label>
+                            <input type="number" id="schedule-order" class="form-control" placeholder="1, 2, 3...">
+                        </div>
+                        <button type="submit" class="btn primary full-width">
+                            <i class="fas fa-calendar-plus"></i> Agendar Mídia
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card-section existing-schedules">
+                    <h3>Agendamentos Existentes</h3>
+                    <div id="existing-schedules-list" class="list-placeholder">
+                        <p>Carregando agendamentos...</p>
+                    </div>
+                </div>
+
+                <div class="card-section reset-section">
+                    <h3>Resetar Exibição de Departamento</h3>
+                    <p>Envie um sinal para resetar a exibição de um departamento para mídias padrão.</p>
+                    <div class="form-group">
+                        <label for="reset-dept">Selecione um departamento</label>
+                        <select id="reset-dept" class="form-control">
+                            <option value="">Selecione um departamento</option>
+                            <option value="departamento-a">Produção</option>
+                            <option value="departamento-b">Estoque</option>
+                            <option value="departamento-c">Cozinha</option>
+                            <option value="departamento-d">Expedição</option>
+                            <option value="departamento-e">Escritorio</option>
+                            <option value="departamento-f">Ferramentaria</option>
+                            <option value="departamento-g">Departamento G</option>
+                        </select>
+                    </div>
+                    <button id="send-reset-signal" class="btn secondary full-width">
+                        <i class="fas fa-sync-alt"></i> Enviar Sinal de Reset
+                    </button>
+                    <script>
+                    if ('serviceWorker' in navigator) {
+                        window.addEventListener('load', () => {
+                        // O caminho foi corrigido para incluir a pasta 'notus-tv'
+                        navigator.serviceWorker.register('/notus-tv/service-worker.js')
+                            .then(registration => {
+                            console.log('Service Worker registrado com sucesso: ', registration);
+                            })
+                            .catch(error => {
+                            console.log('Falha ao registrar o Service Worker: ', error);
+                            });
+                        });
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

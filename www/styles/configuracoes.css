@@ -1,0 +1,413 @@
+/* reset mínimo */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f7;
+  color: #333;
+  line-height: 1.5;
+  overflow-x: auto;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Container principal com sidebar + conteúdo */
+.settings-wrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* ====== SIDEBAR ====== */
+.sidebar {
+  top: 0;
+  background-color: #134596;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  position: relative;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar i {
+  margin-right: 10px;
+}
+
+.sidebar .avatar {
+  background: #fff;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar .avatar i {
+  font-size: 36px;
+  color: #134596;
+}
+
+.sidebar .welcome-text {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.sidebar nav {
+  width: 100%;
+}
+
+.sidebar nav a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 30px;
+  font-size: 0.95rem;
+  transition: background 0.2s;
+}
+
+.sidebar nav a:hover,
+.sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar .logout-link {
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+  cursor: pointer;
+  text-decoration: none;
+  background-color: #b8231d;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.sidebar .logout-link i {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.sidebar .logout-link:hover {
+  background: rgba(255, 0, 0, 0.616);
+}
+
+/* ====== CONTEÚDO PRINCIPAL ====== */
+.settings-content {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.settings-card {
+  background: #fff;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 30px;
+  overflow-x: hidden;
+}
+
+.settings-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.settings-header h2 {
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.settings-sections {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Coluna PROFILE (esquerda) e PASSWORD (direita) */
+.profile-section,
+.password-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+.section-title {
+  font-size: 1rem;
+  color: #134596;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background: #134596;
+}
+
+/* Estilo dos campos */
+.profile-section label,
+.password-section label {
+  display: block;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.profile-section input,
+.password-section input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: #fdfdfd;
+}
+
+.profile-section input[readonly],
+.password-section input[readonly] {
+  background: #f5f5f5;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* Botão de salvar */
+#btnSaveAll, #btnEditProfile, #btnAddCnpj {
+  margin-top: 30px;
+  width: 200px;
+  padding: 12px 0;
+  background: #134596;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#btnSaveAll:hover,
+#btnEditProfile:hover {
+  background: #0080d1;
+}
+
+/* Mensagem de feedback */
+#msgFeedback {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #d9534f;
+  text-align: center;
+}
+
+/* ======================
+   Avatar Placeholder
+====================== */
+.avatar-placeholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(155deg, #009B3A, #002776, #FEDF00);
+  color: #fff;
+  font-size: 32px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+#avatarOptions {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 150px;
+  z-index: 1000;
+}
+
+#avatarOptions button {
+  width: 100%;
+  padding: 8px 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#avatarOptions hr {
+  margin: 0;
+  border-color: #e0e0e0;
+}
+
+/* ======================
+   Tabela Responsiva
+====================== */
+.table-responsive-wrapper {
+  width: 100%;
+  overflow-x: scroll; /* Força a barra de rolagem horizontal */
+  overflow-y: hidden; /* Evita barra de rolagem vertical */
+  margin-bottom: 1rem;
+  border: 1px solid #ccc; /* Adiciona borda para destacar o contêiner */
+  border-radius: 10px;
+}
+
+/* Estilos alternativos para barra de rolagem */
+.table-responsive-wrapper {
+  scrollbar-color: #134596 #f0f2f7; /* Cor do thumb e do track */
+  scrollbar-width: thin; /* Define a largura da barra de rolagem */
+}
+
+/* Para navegadores que suportam ::-webkit-scrollbar */
+.table-responsive-wrapper::-webkit-scrollbar {
+  height: 10px;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-track {
+  background: #f0f2f7;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-thumb {
+  background-color: #134596;
+  border-radius: 5px;
+}
+
+.table-responsive-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #0080d1;
+}
+
+.table {
+  min-width: 800px;
+  width: max-content;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  white-space: nowrap;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.form-control {
+  margin-bottom: 10px;
+}
+
+/* ========== Responsividade geral ========== */
+@media (max-width: 768px) {
+  .avatar-placeholder {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+  }
+
+  .sidebar .welcome-text {
+    font-size: 0.7rem;
+    margin-bottom: 20px;
+  }
+
+  .sidebar nav span {
+    padding: 10px 0;
+    font-size: 0.8rem;
+  }
+
+  .sidebar nav a {
+    font-size: 1rem;
+  }
+
+  .settings-content {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .sidebar {
+  width: 70px;
+  padding-top: 20px;
+}
+
+.sidebar nav a {
+  padding: 12px;
+  text-align: center;
+}
+
+.sidebar nav a span {
+  display: none;
+}
+
+.sidebar .logout-link {
+  font-size: 0;
+  padding: 10px;
+}
+
+.sidebar .logout-link i {
+  font-size: 1.2rem;
+}
+
+  .sidebar nav span {
+    padding: 10px 20px;
+    display: none;
+  }
+
+  .sidebar nav a {
+    padding-left: 37%;
+    font-size: 1rem;
+  }
+
+  .logout-link span {
+    display: none;
+  }
+
+  .logout-link a {
+    padding-left: 25%;
+    font-size: 1rem;
+  }
+
+  .profile-section input,
+  .password-section input {
+    width: 80%;
+  }
+
+  .settings-header h2 {
+    text-align: left;
+    font-size: 1.5rem;
+    color: #555;
+  }
+
+  #btnSaveAll,
+  #btnEditProfile,
+  #btnAddCnpj {
+    width: 100%;
+    padding: 10px;
+  }
+
+}

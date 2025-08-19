@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Verificando seu e‑mail… | Notus</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      display: grid; min-height: 100dvh; place-items: center; background: #f6f7fb;
+    }
+    .card {
+      width: min(560px, 92vw); background: #fff; border-radius: 14px; padding: 28px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08); text-align: center;
+    }
+    .logo { width: 180px; margin: 4px auto 18px; display:block; }
+    h1 { font-size: 1.25rem; margin: 8px 0 6px; color: #134596; }
+    p { margin: 8px 0; color: #444; }
+    .muted { color:#777; font-size:.92rem }
+    .ok { color: #2e7d32; font-weight: 600; }
+    .err { color: #c62828; font-weight: 600; }
+    .spinner {
+      width: 36px; height: 36px; border: 3px solid #e5e7eb; border-top-color: #134596;
+      border-radius: 50%; margin: 14px auto; animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    a.btn {
+      display:inline-block; margin-top:14px; padding:10px 16px; background:#134596; color:#fff;
+      border-radius:8px; text-decoration:none; font-weight:600;
+    }
+    .hide { display:none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img class="logo" src="https://notus.ind.br/wp-content/uploads/2024/05/logo-notus-azul-1536x306.png" alt="Notus do Brasil" />
+    <h1>Verificando seu e‑mail…</h1>
+    <div id="status-area">
+      <div class="spinner"></div>
+      <p class="muted">Isso leva só alguns segundos.</p>
+    </div>
+
+    <div id="success-area" class="hide">
+      <p class="ok">E‑mail verificado com sucesso!</p>
+      <p class="muted">Seu cadastro foi enviado para análise. Você já receberá um e‑mail.</p>
+      <a class="btn" href="login.html">Ir para o login</a>
+    </div>
+
+    <div id="error-area" class="hide">
+      <p class="err" id="err-text">Não foi possível verificar o e‑mail.</p>
+      <a class="btn" href="login.html">Voltar ao login</a>
+    </div>
+  </div>
+
+<script type="module" src="./firebase-config.js"></script>
+<script type="module" src="./verify.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet"  href="./styles/style.css">
+    <link rel="stylesheet"  href="./styles/styleCarrinho.css"/>
+    <link rel="stylesheet"  href="./styles/placa-styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="./image/icone-logosite-quadrado-mask1.svg" type="image/x-icon">
+    <script src="javascript/traducao.js" defer></script>
+    <title>Categoria</title>
+    <style>
+        /* Estilos do Filtro Avançado */
+        
+    </style>
+</head>
+<body>
+  <header class="header-container">
+
+        <nav id="nav-topo" class="nav-contacts">
+            <div class="header-redessociais">
+                <a href="https://www.instagram.com/notusdobrasil" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            
+            <div id="google_translate_element"></div>
+
+            
+
+            <div class="header-bandeiras">    
+                <div class="flags">
+                    <img src="image/br.png" alt="Português" id="pt">
+                    <img src="image/es.png" id="es" alt="es">
+                    <img src="image/us.png" alt="English" id="en">
+                </div>
+            </div>
+
+        </nav>
+        <nav id="nav-fixo" class="nav-navegacao">
+
+            <div>
+                <a href="index.html" style="cursor:pointer;">
+                    <img class="apresentacao__image" src="./image/logo.png"></a>
+            </div>
+
+            <div class="header-busca">
+                <form id="searchFormIndex" class="search-wrapper">
+                <input
+                    type="text"
+                    id="searchInputIndex"
+                    name="search"
+                    placeholder="Buscar"
+                    required
+                />
+                <button type="submit" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </form>
+                <i class="icon-filter fa-solid fa-filter" onclick="toggleFiltroAvancado()" ><p >Filtros</p></i>
+            </div>
+
+            <span class="hamburguer" id="hamburguer-menu">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+            <div class="menu_lateral" id="menu-lateral">
+                    <a class="link_menu" href="todosprodutos.html">Todos Produtos</a>
+                    <div class="dropdown">
+                        <a class="link_menu_lateral">Categorias&nbsp;<i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador">Radiador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=intercooler">Intercooler</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=gmv">GMV</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=eletroventilador">Eletroventilador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=condensador">Condensador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=evaporadora">Evaporadora</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo motor">Radiador de óleo motor</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo transmissão">Radiador de óleo transmissão</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de aquecimento">Radiador de aquecimento </a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+                    <a id="userLink" href="login.html" style="font-size:30px; cursor:pointer; position:relative;">
+                    <i id="userIcon" class="fa-solid fa-user" style="color: #134596;"></i>
+                    </a>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenuCarrinho()">
+                        <i style="font-size:30px;cursor:pointer" class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenu()">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+            </div>
+
+            <div id="menuoculto2" class="menuoculto2">
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Montadoras</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('montadoras')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchMontadoras"
+          placeholder="Buscar montadoras..."
+          onInput="filterCheckboxesMontadoras()"
+          style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer" class="checkbox-container"></div>
+  </div>
+
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Categorias</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('categorias')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchCategorias"
+          placeholder="Buscar categorias..."
+          onInput="filterCheckboxesCategorias()"
+          style=" padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer2" class="checkbox-container"></div>
+  </div>
+
+  <!-- botões de ação -->
+  <div class="menuoculto2-actions">
+    <button
+      type="button"
+      class="buscar-btn"
+      onclick="fecharNav2()"
+    >
+      🔎
+    </button>
+    <button
+      type="button"
+      class="fechar-btn"
+      onclick="apenasFecharNav2()"
+    >
+      ×
+    </button>
+  </div>
+</div>
+        </nav>
+    </header>
+
+    <!-- Filtro Avançado -->
+    <div id="filtroAvancado" class="filtro-avancado" style="display: none;">
+        <div class="filtro-avancado-header">
+            <span>FILTRO AVANÇADO</span>
+        </div>
+        <div class="filtro-avancado-content">
+            <div class="filtro-row">
+                <!-- Accordion para Tipo de Produto (Categoria) -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('categoria')">
+                        <span>TIPO DE PRODUTO</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-categoria">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar tipo de produto..." id="search-categoria" oninput="filtrarOpcoes('categoria', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-categoria">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion para Montadora -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('montadora')">
+                        <span>MONTADORA</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-montadora">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar montadora..." id="search-montadora" oninput="filtrarOpcoes('montadora', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-montadora">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campos de Ano e Busca Geral -->
+                <input type="number" id="filtroAnoInicio" placeholder="ANO INÍC" class="filtro-input-ano" min="1900" max="2030">
+                <input type="number" id="filtroAnoFim" placeholder="ANO FIM" class="filtro-input-ano" min="1900" max="2030">
+                
+                <!-- Dropdown para seleção de campo de busca -->
+                <div class="filtro-busca-container">
+                    <div class="filtro-campo-accordion">
+                        <div class="filtro-campo-header" onclick="toggleCampoAccordion()">
+                            <span id="campo-selecionado">BUSCAR EM</span>
+                            <i class="fa-solid fa-chevron-down filtro-campo-icon"></i>
+                        </div>
+                        <div class="filtro-campo-content" id="filtro-campo-dropdown">
+                            <div class="filtro-campo-list">
+                                <div class="filtro-campo-item" onclick="selecionarCampo('todos', 'BUSCAR EM')">TODOS</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('categoria', 'CATEGORIA')">CATEGORIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('montadora', 'MONTADORA')">MONTADORA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('modelo', 'MODELO')">MODELO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('codigo', 'CÓDIGO')">CÓDIGO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('referencia', 'REFERÊNCIA')">REFERÊNCIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('descricao', 'DESCRIÇÃO')">DESCRIÇÃO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('ano', 'ANO')">ANO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('placa', 'PLACA')">PLACA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="filtroBuscaGeral" placeholder="Código, descrição, modelo do veículo" class="filtro-input-wide">
+                </div>
+                
+                <!-- Botões -->
+                <button type="button" id="btnLimparFiltros" class="filtro-btn-limpar">LIMPAR</button>
+                <button type="button" id="btnBuscarAvancado" class="filtro-btn-buscar">BUSCAR</button>
+            </div>
+        </div>
+    </div>
+
+    <aside id="menuoculto" class="menuoculto">
+        <button class="btnFechar" onclick="fecharNav()" aria-label="Fechar menu">&times;</button>
+        
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-heart" style="font-size: 20px; color: #fff;"></i>
+                Meus Favoritos
+            </div>
+
+            <div id="cart-items" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="toggleAllButton" onclick="toggleAllFavorites()" class="action-button">
+                    <i class="fa-solid fa-check-double"></i>
+                    Marcar Todos
+                </button>
+                <button id="send-to-cart" onclick="sendFavoritesToCart()" class="action-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Enviar ao carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Menu oculto para o carrinho -->
+    <aside id="menuoculto-carrinho" class="menuoculto">      
+        <button class="btnFechar" onclick="fecharNavCarrinho()" aria-label="Fechar menu">&times;</button>
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-cart-shopping" style="color: #fff; font-size: 20px;"></i>
+                Meu Carrinho
+            </div>
+            
+            <div id="cart-items-carrinho" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="checkoutButtonCarrinho" onclick="window.location.href =
+                    `carrinho.html`;" class="action-button">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    Ir para o Carrinho
+                </button>
+                <button id="limpar-carrinho" onclick="limparCarrinho()" class="action-button">
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar Carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+  <main>
+    <section class="secao-banners">
+            <div class="swiper swiper-banners">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="carousel-item active">
+                            <img src="./image/notusaniversario.jpg" class="d-block w-100" alt="Aniversario Notus">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-item active">
+                            <img src="./image/notusaniversario.jpg" class="d-block w-100" alt="Aniversario Notus">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="carousel-item active">
+                            <img src="./image/notusaniversario.jpg" class="d-block w-100" alt="Aniversario Notus">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+                <div class="swiper-button-prev" style="background-color: #13459600;"></div>
+                <div class="swiper-button-next" style="background-color: #13459600;"></div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <div class="linha-completa">
+            <h2>Linhas de <strong>Produtos</strong></h2>
+        </div>
+
+        <section class="secao-categorias">
+            <div class="swiper-botoes-externo">
+            <div class="swiper-button-next-categorias"></div>
+                <div class="swiper-categorias-wrapper">
+                    <div class="swiper swiper-categorias">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Lançamentos</p>
+                                            <img src="./image/lancamentos.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Radiador</p>
+                                            <img src="./image/radiador.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Intercooler</p>
+                                            <img src="./image/intercooler.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">GMV</p>
+                                            <img src="./image/gmv.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Eletroventilador</p>
+                                            <img src="./image/eletroventilador-03.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Condensador</p>
+                                            <img src="./image/condesador.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Evaporadora</p>
+                                            <img src="./image/evaporador.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Radiador de óleo motor</p>
+                                            <img src="./image/radiadoroleo.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Radiador de aquecimento</p>
+                                            <img src="./image/radiadorquente.png" class="prod-size">
+                                        </div>
+                            </div>
+                            <div class="swiper-slide">
+                            <div class="card-one" onclick="redirecionarParaProdutos(event, this)">
+                                            <p class="titulo-linha">Ventilador interno</p>
+                                            <img src="./image/ventiladorinterno.png" class="prod-size">
+                                        </div>
+                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev-categorias"></div>
+        </div>
+        </section>
+
+        <section class="secao-whatsapp">
+            <div class="whatsapp-container">
+                <a id="btn-whatsapp" class="whatsapp-botao">
+                    <div id="icon-wrapper">
+                        <img
+                        id="whatsapp-icon"
+                        class="whatsapp-icone"
+                        src="./image/icone-whatsapp.svg"
+                        alt="WhatsApp"
+                        >
+                        <img
+                        id="close-icon"
+                        class="whatsapp-icone"
+                        src="./image/icone-fechar.png"
+                        alt="Fechar"
+                        >
+                    </div>
+                </a>
+                <p id="balao-whatsapp" class="whatsapp-text-cta show">
+                Precisa de ajuda? Fale conosco pelo
+                <strong class="secao2-titulo-cinza" style="font-weight:700;">
+                        Whatsapp!
+                </strong>
+                </p>
+                <div class="card-whatsapp-container" id="card-whatsapp">
+                    <div class="card-whatsapp-sup">
+                        <img src="./image/icone-whatsapp.svg" alt="Entrar em contato por Whatsapp">
+                        <div class="card-whatsapp-sup-text-container">
+                            <h2>Fale Conosco!</h2>
+                            <p>Olá! Clique em um de nossos membros da equipe para ser atendido imediatamente pelo Whatsapp!</p>
+                        </div>
+                    </div>
+                    <div class="card-whatsapp-bottom">
+                        <p>A equipe normalmente responde em alguns minutos.</p>
+                        <a class="card-whatsapp-bottom-botao" href="https://wa.me/5511945478542" target="_blank">
+                            <hr>
+                            <img src="./image/logo-wa-500x417.png" alt="Entrar em contato por Whatsapp">
+                            <div class="card-whatsapp-bottom-botao-text">
+                                <h3>Alex</h3>
+                                <p>Comercial</p>
+                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a class="card-whatsapp-bottom-botao" href="https://wa.me/5511975174745" target="_blank">
+                            <hr>
+                            <img src="./image/logo-wa-500x417.png" alt="Entrar em contato por Whatsapp">
+                            <div class="card-whatsapp-bottom-botao-text">
+                                <h3>Carlos</h3>
+                                <p>Comercial</p>
+                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a class="card-whatsapp-bottom-botao" href="https://wa.me/551142101998" target="_blank">
+                            <hr>
+                            <img src="./image/logo-wa-500x417.png" alt="Entrar em contato por Whatsapp">
+                            <div class="card-whatsapp-bottom-botao-text">
+                                <h3>Luciano</h3>
+                                <p>Comercial</p>
+                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a class="card-whatsapp-bottom-botao" href="https://wa.me/551142101997" target="_blank">
+                            <hr>
+                            <img src="./image/logo-wa-500x417.png" alt="Entrar em contato por Whatsapp">
+                            <div class="card-whatsapp-bottom-botao-text">
+                                <h3>Viviane</h3>
+                                <p>Comercial</p>
+                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a class="card-whatsapp-bottom-botao" href="https://wa.me/551124136550" target="_blank">
+                            <hr>
+                            <img src="./image/logo-wa-500x417.png" alt="Entrar em contato por Whatsapp">
+                            <div class="card-whatsapp-bottom-botao-text">
+                                <h3>Welton</h3>
+                                <p>Comercial</p>
+                            </div>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-todos">Todos os Produtos</h2>
+        <h1 id="titulo"></h1>
+    </div>
+
+    <section class="secao-categoria-dinamica" id="section-todos">
+            <div class="swiper-botoes-externo">
+                <div class="swiper-button-prev-todos"></div>
+
+                <div class="swiper-todos-wrapper">
+                <div class="swiper swiper-todos">
+                <div class="swiper-wrapper" id="produtos-todos">
+                </div>
+
+                </div>
+            </div>
+
+            <div class="swiper-button-next-todos"></div>
+        </div>
+
+        <a href="todosprodutos.html?categoria=Radiador" class="mais-produtos-link">
+            <p class="mais-produtos">Ver tudo</p>
+        </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-leve"></h2>
+    </div>
+
+    <section class="secao-categoria-dinamica" id="section-leve">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-leve"></div>
+
+            <div class="swiper-leve-wrapper">
+                <div class="swiper swiper-leve">
+                    <div class="swiper-wrapper" id="produtos-leve"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-leve"></div>
+        </div>
+
+        <a href="todosprodutos.html?search=leve&categoria=Radiador" class="mais-produtos-link">
+            <p class="mais-produtos">Ver tudo</p>
+        </a>
+  </section>
+    
+    <div class="divisor-de-secao">
+        <h2 id="titulo-pesado"></h2>
+    </div>
+
+    <section class="secao-categoria-dinamica" id="section-pesado">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-pesado"></div>
+
+            <div class="swiper-pesado-wrapper">
+                <div class="swiper swiper-pesado">
+                    <div class="swiper-wrapper" id="produtos-pesado"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-pesado"></div>
+        </div>
+
+        <a href="todosprodutos.html?search=pesado&categoria=Radiador" class="mais-produtos-link">
+            <p class="mais-produtos">Ver tudo</p>
+        </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-brasado"></h2>
+    </div>
+
+    <section class="secao-categoria-dinamica" id="section-brasado">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-brasado"></div>
+
+            <div class="swiper-brasado-wrapper">
+                <div class="swiper swiper-brasado">
+                    <div class="swiper-wrapper" id="produtos-brasado"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-brasado"></div>
+        </div>
+
+        <a href="todosprodutos.html?search=brasado&categoria=Radiador" class="mais-produtos-link">
+            <p class="mais-produtos">Ver tudo</p>
+        </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-expandido"></h2>
+    </div>
+
+    <section class="secao-categoria-dinamica" id="section-expandido">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-expandido"></div>
+
+            <div class="swiper-expandido-wrapper">
+                <div class="swiper swiper-expandido">
+                    <div class="swiper-wrapper" id="produtos-expandido"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-expandido"></div>
+        </div>
+
+        <a href="todosprodutos.html?search=expandido&categoria=Radiador" class="mais-produtos-link">
+            <p class="mais-produtos">Ver tudo</p>
+        </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-geral"></h2>
+    </div>
+
+    <!-- Lançamentos Geral -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-geral">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-geral"></div>
+
+            <div class="swiper-lancamento-geral-wrapper">
+                <div class="swiper swiper-lancamento-geral">
+                    <div class="swiper-wrapper" id="produtos-lancamento-geral"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-geral"></div>
+        </div>
+    <a href="categoria.html?cat=geral" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-radiador"></h2>
+    </div>
+
+    <!-- Lançamentos Radiadores -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-radiador">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-radiador"></div>
+            <div class="swiper-lancamento-radiador-wrapper">
+                <div class="swiper swiper-lancamento-radiador">
+                    <div class="swiper-wrapper" id="produtos-lancamento-radiador"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-radiador"></div>
+        </div>
+
+    <a href="categoria.html?cat=radiador" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-intercooler"></h2>
+    </div>
+
+    <!-- Lançamentos Intercooler -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-intercooler">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-intercooler"></div>
+
+            <div class="swiper-lancamento-intercooler-wrapper">
+                <div class="swiper swiper-lancamento-intercooler">
+                    <div class="swiper-wrapper" id="produtos-lancamento-intercooler"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-intercooler"></div>
+        </div>
+    <a href="categoria.html?cat=intercooler" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-gmv"></h2>
+    </div>
+
+    <!-- Lançamentos Gmv -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-gmv">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-gmv"></div>
+
+            <div class="swiper-lancamento-gmv-wrapper">
+                <div class="swiper swiper-lancamento-gmv">
+                    <div class="swiper-wrapper" id="produtos-lancamento-gmv"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-gmv"></div>
+        </div>
+    <a href="categoria.html?cat=gmv" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-eletroventilador"></h2>
+    </div>
+
+    <!-- Lançamentos Eletroventiladores -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-eletroventilador">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-eletroventilador"></div>
+
+            <div class="swiper-lancamento-eletroventilador-wrapper">
+                <div class="swiper swiper-lancamento-eletroventilador">
+                    <div class="swiper-wrapper" id="produtos-lancamento-eletroventilador"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-eletroventilador"></div>
+        </div>
+    <a href="categoria.html?cat=eletroventilador" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-condensador"></h2>
+    </div>
+    
+    <!-- Lançamentos Condensadores -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-condensador">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-condensador"></div>
+
+            <div class="swiper-lancamento-condensador-wrapper">
+                <div class="swiper swiper-lancamento-condensador">
+                    <div class="swiper-wrapper" id="produtos-lancamento-condensador"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-condensador"></div>
+        </div>
+    <a href="categoria.html?cat=condensador" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-evaporadora"></h2>
+    </div>
+
+    <!-- Lançamentos Evaporadoras -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-evaporadora">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-evaporadora"></div>
+
+            <div class="swiper-lancamento-evaporadora-wrapper">
+                <div class="swiper swiper-lancamento-evaporadora">
+                    <div class="swiper-wrapper" id="produtos-lancamento-evaporadora"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-evaporadora"></div>
+        </div>
+    <a href="categoria.html?cat=evaporadora" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-radiador-de-oleo-motor"></h2>
+    </div>
+
+    <!-- Lançamentos Radiadores de Óleo Motor -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-radiador-de-oleo-motor">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-radiador-de-oleo-motor"></div>
+
+            <div class="swiper-lancamento-radiador-de-oleo-motor-wrapper">
+                <div class="swiper swiper-lancamento-radiador-de-oleo-motor">
+                    <div class="swiper-wrapper" id="produtos-lancamento-radiador-de-oleo-motor"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-radiador-de-oleo-motor"></div>
+        </div>
+    <a href="categoria.html?cat=radiador-de-oleo-motor" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-radiador-de-oleo-transmissao"></h2>
+    </div>
+
+    <!-- Lançamentos Radiadores de Óleo Transmissão -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-radiador-de-oleo-transmissao">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-radiador-de-oleo-transmissao"></div>
+
+            <div class="swiper-lancamento-radiador-de-oleo-transmissao-wrapper">
+                <div class="swiper swiper-lancamento-radiador-de-oleo-transmissao">
+                    <div class="swiper-wrapper" id="produtos-lancamento-radiador-de-oleo-transmissao"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-radiador-de-oleo-transmissao"></div>
+        </div>
+    <a href="categoria.html?cat=radiador-de-oleo-transmissao" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <div class="divisor-de-secao">
+        <h2 id="titulo-lancamento-radiador-de-aquecimento"></h2>
+    </div>
+
+    <!-- Lançamentos radiador-de-aquecimento -->
+    <section class="secao-categoria-dinamica" id="section-lancamento-radiador-de-aquecimento">
+        <div class="swiper-botoes-externo">
+            <div class="swiper-button-prev-lancamento-radiador-de-aquecimento"></div>
+
+            <div class="swiper-lancamento-radiador-de-aquecimento-wrapper">
+                <div class="swiper swiper-lancamento-radiador-de-aquecimento">
+                    <div class="swiper-wrapper" id="produtos-lancamento-radiador-de-aquecimento"></div>
+                </div>
+            </div>
+            <div class="swiper-button-next-lancamento-radiador-de-aquecimento"></div>
+        </div>
+    <a href="categoria.html?cat=radiador-de-aquecimento" class="mais-produtos-link">
+        <p class="mais-produtos">Ver tudo</p>
+    </a>
+    </section>
+
+    <section class="container-secao7">
+       <div class="secao7-div1">
+           <h2><strong>Assine nossa newsletter</strong> e fique por dentro de todas as novidades!</h2>
+       </div>
+       <form class="secao7-form" id="newsletter-form" class="form__change">
+                <label for="fname"></label>
+                <input class="form-text" type="text" id="name" name="name" id="name" placeholder="Digite seu nome" required>
+                <label for="lname"></label>
+                <input class="form-text" type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                
+                <button class="form-botao" type="submit">Inscrever-se</button>
+        </form>
+    </section>
+
+  </main>
+  <footer class="container-footer">
+        <div class="footer-containersub">
+            <div class="footer-containersub-div">
+                <h3><strong>Menu</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="https://notus.ind.br/sobre-notus/">Sobre Notus</a></li>
+                    <li><a href="https://notus.ind.br/vagas-abertas/">Trabalhe Conosco</a></li>
+                    <li><a href="https://notus.ind.br/garantia/">Garantia</a></li>
+                    <li><a href="https://notus.ind.br/representantes/">Representantes</a></li>
+                    <li><a href="https://notus.ind.br/contato/">Contato</a></li>
+                    <li><a href="https://catalogonotus.vipsoft.com.br/" target="_blank">Catálogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Lista de Produtos</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="todosprodutos.html?categoria=radiador">Radiador</a></li>
+                    <li><a href="todosprodutos.html?categoria=intercooler">Intercooler</a></li>
+                    <li><a href="todosprodutos.html?categoria=gmv">GMV</a></li>
+                    <li><a href="todosprodutos.html?categoria=eletroventilador">Eletroventilador</a></li>
+                    <li><a href="todosprodutos.html?categoria=condensador">Condensador</a></li>
+                    <li><a href="todosprodutos.html?categoria=evaporadora">Evaporadora</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo motor">Radiador de óleo motor</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo transmissão">Radiador de óleo transmissão</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de aquecimento">Radiador de aquecimento </a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Fale Conosco</strong></h3>
+                <ul class="footer-lista">
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1997</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1998</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 2413-6550</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-envelope"></i></i><a href="mailto:contato@notus.ind.br">contato@notus.ind.br</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-location-dot" style="color:#134596"></i></i><a href="https://www.google.com/maps/place/Notus+Sistemas+T%C3%A9rmicos+do+Brasil/@-23.1645049,-47.2757049,1035m/data=!3m1!1e3!4m6!3m5!1s0x94cf4d1be8a34e01:0xf8318f2901fc4d14!8m2!3d-23.1645659!4d-47.2729364!16s%2Fg%2F11frdtvtn6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">Rua Projetada, 630, Salto/SP, 13329-429</a></li>
+                </ul>
+                <div class="footer-redessociais">
+                    <a href="https://www.instagram.com/notusdobrasil" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div  class="footer-faixa">
+            <div">
+                <p>Notus Sistemas Térmicos Do Brasil © Todos os direitos reservados</p>
+            </div>
+            <div class="faixa-amarela">
+            </div>
+            <div class="faixa-verde">
+            </div>
+        </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/config-placa.js"></script>
+    <script src="./javascript/placa-api.js"></script>
+    <script src="./javascript/categoria.js"></script>
+    <script src="./javascript/index.js"></script>
+    <script src="./javascript/newsletter.js"></script>
+    <script src="./javascript/submenu-dinamico.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    
+    <script>
+        // Funções do Filtro Avançado
+        function toggleFiltroAvancado() {
+            const filtro = document.getElementById('filtroAvancado');
+            
+            if (filtro.classList.contains('show')) {
+                // Esconder com animação
+                filtro.classList.remove('show');
+                setTimeout(() => {
+                    filtro.style.display = 'none';
+                }, 400); // Tempo da transição CSS
+            } else {
+                // Mostrar com animação
+                filtro.style.display = 'block';
+                // Força o reflow para que a transição funcione
+                filtro.offsetHeight;
+                filtro.classList.add('show');
+                carregarOpcoesDropdown();
+            }
+        }
+
+        function carregarOpcoesDropdown() {
+            fetch('./conversor/produtos.json')
+                .then(r => r.json())
+                .then(produtos => {
+                    // Armazenar produtos globalmente para uso na filtragem
+                    window.produtosData = produtos;
+
+                    // Carregar categorias
+                    const categorias = [...new Set(produtos.map(p => p.categoria).filter(Boolean))].sort();
+                    const selectCategoria = document.getElementById('filtroCategoria');
+                    selectCategoria.innerHTML = '<option value="">TIPO PRODUTO</option>';
+                    categorias.forEach(categoria => {
+                        selectCategoria.innerHTML += `<option value="${categoria}">${categoria.toUpperCase()}</option>`;
+                    });
+
+                    // Carregar todas as montadoras inicialmente
+                    carregarMontadoras();
+
+                    // Adicionar event listener para categoria
+                    selectCategoria.addEventListener('change', function() {
+                        carregarMontadoras(this.value);
+                    });
+                })
+                .catch(console.error);
+        }
+
+        function carregarMontadoras(categoriaSelecionada = '') {
+            if (!window.produtosData) return;
+
+            const selectMontadora = document.getElementById('filtroMontadora');
+            
+            // Filtrar produtos pela categoria se selecionada
+            let produtosFiltrados = window.produtosData;
+            if (categoriaSelecionada) {
+                produtosFiltrados = window.produtosData.filter(p => 
+                    p.categoria && p.categoria.toLowerCase() === categoriaSelecionada.toLowerCase()
+                );
+            }
+
+            // Obter montadoras únicas dos produtos filtrados
+            const montadoras = [...new Set(produtosFiltrados.map(p => p.montadora).filter(Boolean))].sort();
+
+            // Limpar e recarregar as opções de montadora
+            selectMontadora.innerHTML = '<option value="">MONTADORA</option>';
+            montadoras.forEach(montadora => {
+                selectMontadora.innerHTML += `<option value="${montadora}">${montadora.toUpperCase()}</option>`;
+            });
+
+            // Limpar seleção atual da montadora quando categoria muda
+            selectMontadora.value = '';
+        }
+
+        function aplicarFiltroAvancado() {
+            const categoria = document.getElementById('filtroCategoria').value;
+            const montadora = document.getElementById('filtroMontadora').value;
+            const anoInicio = document.getElementById('filtroAnoInicio').value;
+            const anoFim = document.getElementById('filtroAnoFim').value;
+            const buscaGeral = document.getElementById('filtroBuscaGeral').value.trim();
+
+            // Construir URL para todosprodutos.html com parâmetros
+            let url = 'todosprodutos.html?';
+            const params = [];
+            
+            if (categoria) params.push(`categoria=${encodeURIComponent(categoria)}`);
+            if (montadora) params.push(`montadora=${encodeURIComponent(montadora)}`);
+            if (anoInicio) params.push(`anoInicio=${anoInicio}`);
+            if (anoFim) params.push(`anoFim=${anoFim}`);
+            if (buscaGeral) params.push(`search=${encodeURIComponent(buscaGeral)}`);
+            
+            url += params.join('&');
+            
+            // Redirecionar para a página de produtos com os filtros aplicados
+            window.location.href = url;
+        }
+
+        // Funções do accordion e filtro avançado completo
+        function carregarOpcoesDropdown() {
+            fetch('./conversor/produtos.json')
+                .then(r => r.json())
+                .then(produtos => {
+                    // Armazenar produtos globalmente para uso na filtragem
+                    window.produtosData = produtos;
+
+                    // Carregar categorias
+                    const categorias = [...new Set(produtos.map(p => p.categoria).filter(Boolean))].sort();
+                    carregarCheckboxes('categoria', categorias);
+
+                    // Carregar todas as montadoras inicialmente
+                    const montadoras = [...new Set(produtos.map(p => p.montadora).filter(Boolean))].sort();
+                    carregarCheckboxes('montadora', montadoras);
+                })
+                .catch(console.error);
+        }
+
+        function carregarCheckboxes(tipo, opcoes) {
+            const container = document.getElementById(`lista-${tipo}`);
+            if (!container) return;
+
+            container.innerHTML = '';
+            
+            opcoes.forEach(opcao => {
+                const item = document.createElement('div');
+                item.className = 'filtro-checkbox-item';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `${tipo}-${opcao.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
+                checkbox.value = opcao;
+                checkbox.addEventListener('change', () => {
+                    atualizarContadores();
+                    // Se for categoria, atualizar montadoras quando mudar seleção
+                    if (tipo === 'categoria') {
+                        atualizarMontadorasPorCategoria();
+                    }
+                });
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = opcao.toUpperCase();
+                
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                container.appendChild(item);
+            });
+            
+            // Atualizar contadores inicialmente
+            atualizarContadores();
+        }
+
+        function atualizarMontadorasPorCategoria() {
+            if (!window.produtosData) return;
+
+            // Obter categorias selecionadas
+            const categoriasSelecionadas = Array.from(document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            let montadorasDisponiveis = [];
+            
+            if (categoriasSelecionadas.length === 0) {
+                // Se nenhuma categoria selecionada, mostrar todas as montadoras
+                montadorasDisponiveis = [...new Set(window.produtosData.map(p => p.montadora).filter(Boolean))].sort();
+            } else {
+                // Filtrar produtos pelas categorias selecionadas
+                const produtosFiltrados = window.produtosData.filter(produto => 
+                    categoriasSelecionadas.some(cat => 
+                        produto.categoria && produto.categoria.toLowerCase() === cat.toLowerCase()
+                    )
+                );
+                
+                // Obter montadoras únicas dos produtos filtrados
+                montadorasDisponiveis = [...new Set(produtosFiltrados.map(p => p.montadora).filter(Boolean))].sort();
+            }
+
+            // Salvar seleções atuais de montadora
+            const montadorasSelecionadas = Array.from(document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            // Recarregar checkboxes de montadora
+            const containerMontadora = document.getElementById('lista-montadora');
+            if (!containerMontadora) return;
+
+            containerMontadora.innerHTML = '';
+            
+            montadorasDisponiveis.forEach(montadora => {
+                const item = document.createElement('div');
+                item.className = 'filtro-checkbox-item';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `montadora-${montadora.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
+                checkbox.value = montadora;
+                
+                // Manter seleção anterior se a montadora ainda estiver disponível
+                if (montadorasSelecionadas.includes(montadora)) {
+                    checkbox.checked = true;
+                }
+                
+                checkbox.addEventListener('change', atualizarContadores);
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = montadora.toUpperCase();
+                
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                containerMontadora.appendChild(item);
+            });
+            
+            // Atualizar contadores
+            atualizarContadores();
+        }
+
+        function toggleAccordion(tipo) {
+            const header = document.querySelector(`[onclick="toggleAccordion('${tipo}')"]`);
+            const content = document.getElementById(`accordion-${tipo}`);
+            
+            // Fechar dropdown de campo se estiver aberto
+            const campoHeader = document.querySelector('.filtro-campo-header');
+            const campoContent = document.querySelector('.filtro-campo-content');
+            if (campoHeader && campoContent) {
+                campoHeader.classList.remove('active');
+                campoContent.classList.remove('active');
+            }
+            
+            // Fechar outros accordions
+            document.querySelectorAll('.filtro-accordion-header').forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.filtro-accordion-content').forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('active');
+                }
+            });
+            
+            // Toggle do accordion atual
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        function toggleCampoAccordion() {
+            const accordion = document.querySelector('.filtro-campo-accordion');
+            const header = document.querySelector('.filtro-campo-header');
+            const content = document.querySelector('.filtro-campo-content');
+            
+            // Fechar outros accordions se estiverem abertos
+            document.querySelectorAll('.filtro-accordion-header').forEach(h => {
+                h.classList.remove('active');
+            });
+            document.querySelectorAll('.filtro-accordion-content').forEach(c => {
+                c.classList.remove('active');
+            });
+            
+            // Toggle do dropdown de campo
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        let campoSelecionado = 'todos';
+
+        function selecionarCampo(campo, texto) {
+            campoSelecionado = campo;
+            document.getElementById('campo-selecionado').textContent = texto;
+            
+            // Fechar o dropdown
+            document.querySelector('.filtro-campo-header').classList.remove('active');
+            document.querySelector('.filtro-campo-content').classList.remove('active');
+            
+            // Atualizar placeholder da busca
+            const input = document.getElementById('filtroBuscaGeral');
+            if (input) {
+                switch(campo) {
+                    case 'todos':
+                        input.placeholder = 'Código, descrição, modelo do veículo';
+                        break;
+                    case 'categoria':
+                        input.placeholder = 'Buscar por categoria...';
+                        break;
+                    case 'montadora':
+                        input.placeholder = 'Buscar por montadora...';
+                        break;
+                    case 'modelo':
+                        input.placeholder = 'Buscar por modelo...';
+                        break;
+                    case 'codigo':
+                        input.placeholder = 'Buscar por código...';
+                        break;
+                    case 'referencia':
+                        input.placeholder = 'Buscar por código de referência...';
+                        break;
+                    case 'descricao':
+                        input.placeholder = 'Buscar por descrição...';
+                        break;
+                    case 'ano':
+                        input.placeholder = 'Buscar por ano...';
+                        break;
+                    case 'placa':
+                        input.placeholder = 'Digite a placa do veículo (ABC-1234)';
+                        input.classList.add('input-placa');
+                        break;
+                }
+            }
+        }
+
+        function searchInSpecificField(produto, termo, campo) {
+            const termosNormalizados = termo.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+            
+            if (campo === 'todos') {
+                // Busca em todos os campos
+                const campos = [
+                    produto.codigo,
+                    produto.descricao,
+                    produto.categoria,
+                    produto.montadora,
+                    produto.modelo,
+                    produto.ano,
+                    produto.referencia,
+                    produto.codigo_referencia,
+                    produto.codigoReferencia,
+                    produto.referenciaoriginal,
+                    produto.crossreference,
+                    produto.oem,
+                    produto.denso,
+                    produto.mahle,
+                    produto.marelli,
+                    produto.valeo,
+                    produto.visconde
+                ];
+                
+                return termosNormalizados.every(termo =>
+                    campos.some(campo => 
+                        campo && campo.toString().toLowerCase().includes(termo)
+                    )
+                );
+            } else {
+                // Busca no campo específico
+                let valorCampo = '';
+                switch(campo) {
+                    case 'categoria':
+                        valorCampo = produto.categoria;
+                        break;
+                    case 'montadora':
+                        valorCampo = produto.montadora;
+                        break;
+                    case 'modelo':
+                        valorCampo = produto.modelo;
+                        break;
+                    case 'codigo':
+                        valorCampo = produto.codigo;
+                        break;
+                    case 'referencia':
+                        // Busca em todos os campos de referência das diferentes marcas
+                        const camposReferencia = [
+                            produto.referencia,
+                            produto.codigo_referencia,
+                            produto.codigoReferencia,
+                            produto.referenciaoriginal,
+                            produto.crossreference,
+                            produto.oem,
+                            produto.denso,
+                            produto.mahle,
+                            produto.marelli,
+                            produto.valeo,
+                            produto.visconde
+                        ];
+                        
+                        // Concatena todos os valores de referência que existem
+                        valorCampo = camposReferencia
+                            .filter(campo => campo && campo !== null && campo !== '')
+                            .join(' ');
+                        break;
+                    case 'descricao':
+                        valorCampo = produto.descricao;
+                        break;
+                    case 'ano':
+                        valorCampo = produto.ano;
+                        break;
+                }
+                
+                if (!valorCampo) return false;
+                
+                const valorNormalizado = valorCampo.toString().toLowerCase();
+                return termosNormalizados.every(termo => valorNormalizado.includes(termo));
+            }
+        }
+
+        function filtrarOpcoes(tipo, termo) {
+            const lista = document.getElementById(`lista-${tipo}`);
+            const items = lista.querySelectorAll('.filtro-checkbox-item');
+            const termoBusca = termo.toLowerCase().trim();
+            
+            items.forEach(item => {
+                const label = item.querySelector('label');
+                const texto = label.textContent.toLowerCase();
+                
+                if (termoBusca === '' || texto.includes(termoBusca)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function atualizarContadores() {
+            const tipos = ['categoria', 'montadora'];
+            
+            tipos.forEach(tipo => {
+                const checkboxes = document.querySelectorAll(`#lista-${tipo} input[type="checkbox"]:checked`);
+                const header = document.querySelector(`[onclick="toggleAccordion('${tipo}')"] span`);
+                const count = checkboxes.length;
+                
+                if (count > 0) {
+                    const textoOriginal = tipo === 'categoria' ? 'TIPO DE PRODUTO' : 'MONTADORA';
+                    header.textContent = `${textoOriginal} (${count})`;
+                    header.parentElement.style.backgroundColor = '#134596';
+                    header.parentElement.style.color = 'white';
+                } else {
+                    const textoOriginal = tipo === 'categoria' ? 'TIPO DE PRODUTO' : 'MONTADORA';
+                    header.textContent = textoOriginal;
+                    header.parentElement.style.backgroundColor = '#f8f9fa';
+                    header.parentElement.style.color = '#134596';
+                }
+            });
+        }
+
+        function aplicarFiltroAvancado() {
+            // Verificar se é busca por placa
+            if (campoSelecionado === 'placa') {
+                const placa = document.getElementById('filtroBuscaGeral').value.trim();
+                
+                if (!placa) {
+                    mostrarErro('Por favor, digite uma placa para consultar.');
+                    return;
+                }
+                
+                if (!validarFormatoPlaca(placa)) {
+                    mostrarErro('Formato de placa inválido. Use o formato ABC-1234 ou ABC1D23.');
+                    return;
+                }
+                
+                // Realizar consulta da placa
+                consultarPlacaEFiltrar(placa);
+                return;
+            }
+
+            // Obter seleções múltiplas dos checkboxes
+            const categoriasSelecionadas = Array.from(document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked')).map(cb => cb.value);
+            const montadorasSelecionadas = Array.from(document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            const anoInicio = document.getElementById('filtroAnoInicio').value;
+            const anoFim = document.getElementById('filtroAnoFim').value;
+            const buscaGeral = document.getElementById('filtroBuscaGeral').value.trim();
+
+            // Construir URL para todosprodutos.html com parâmetros
+            let url = 'todosprodutos.html?';
+            const params = [];
+            
+            // Adicionar categorias
+            if (categoriasSelecionadas.length > 0) {
+                categoriasSelecionadas.forEach(cat => {
+                    params.push(`categoria=${encodeURIComponent(cat)}`);
+                });
+            }
+            
+            // Adicionar montadoras
+            if (montadorasSelecionadas.length > 0) {
+                montadorasSelecionadas.forEach(mont => {
+                    params.push(`montadora=${encodeURIComponent(mont)}`);
+                });
+            }
+            
+            if (anoInicio) params.push(`anoInicio=${anoInicio}`);
+            if (anoFim) params.push(`anoFim=${anoFim}`);
+            if (buscaGeral) {
+                params.push(`search=${encodeURIComponent(buscaGeral)}`);
+                params.push(`campo=${encodeURIComponent(campoSelecionado)}`);
+            }
+            
+            url += params.join('&');
+            
+            // Redirecionar para a página de produtos com os filtros aplicados
+            window.location.href = url;
+        }
+
+        // Função para consultar placa e filtrar produtos
+        async function consultarPlacaEFiltrar(placa) {
+            try {
+                // Consultar dados do veículo pela placa
+                const dadosVeiculo = await consultarPlaca(placa);
+                
+                // Buscar produtos compatíveis
+                const produtosCompativeis = buscarProdutosPorVeiculo(dadosVeiculo, window.produtosData || []);
+                
+                // Mostrar resultado
+                mostrarResultadoPlaca(dadosVeiculo, produtosCompativeis);
+                
+            } catch (error) {
+                mostrarErro(error.message);
+            }
+        }
+
+        function limparFiltros() {
+            // Limpa todos os checkboxes
+            document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+            document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+            
+            // Limpa campos de ano e busca
+            document.getElementById('filtroAnoInicio').value = '';
+            document.getElementById('filtroAnoFim').value = '';
+            document.getElementById('filtroBuscaGeral').value = '';
+
+            // Reset do campo selecionado
+            campoSelecionado = 'todos';
+            document.getElementById('campo-selecionado').textContent = 'BUSCAR EM';
+            document.getElementById('filtroBuscaGeral').placeholder = 'Código, descrição, modelo do veículo';
+
+            // Recarregar todas as montadoras (sem filtro de categoria)
+            atualizarMontadorasPorCategoria();
+
+            // Atualizar contadores
+            atualizarContadores();
+        }
+
+        // Event listeners para o filtro avançado
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnBuscar = document.getElementById('btnBuscarAvancado');
+            if (btnBuscar) {
+                btnBuscar.addEventListener('click', aplicarFiltroAvancado);
+            }
+
+            const btnLimpar = document.getElementById('btnLimparFiltros');
+            if (btnLimpar) {
+                btnLimpar.addEventListener('click', limparFiltros);
+            }
+
+            // Enter nos campos de input (apenas anos e busca geral)
+            ['filtroAnoInicio', 'filtroAnoFim', 'filtroBuscaGeral'].forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            aplicarFiltroAvancado();
+                        }
+                    });
+                }
+            });
+
+            // Event listener para fechar dropdown quando clicar fora
+            document.addEventListener('click', (e) => {
+                const campoAccordion = document.querySelector('.filtro-campo-accordion');
+                if (campoAccordion && !campoAccordion.contains(e.target)) {
+                    const header = document.querySelector('.filtro-campo-header');
+                    const content = document.querySelector('.filtro-campo-content');
+                    if (header && content) {
+                        header.classList.remove('active');
+                        content.classList.remove('active');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet"  href="./styles/style.css">
+    <link rel="stylesheet"  href="./styles/styleCarrinho.css"/>
+    <link rel="stylesheet"  href="./styles/placa-styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" 
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="icon" href="./image/icone-logosite-quadrado-mask1.svg" type="image/x-icon">
+    <script src="javascript/traducao.js" defer></script>
+    <title>Produtos</title>
+    <style>
+        .card-two .titulo-lancamento-descricao {
+        font-size: 1rem;
+        line-height: 1.3;
+        max-height: 8.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        max-width: 250px;
+        padding: 0 15px;
+    }
+
+    .card-two img {
+        width: 90%;
+        height: 50%;
+        object-fit: contain;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #c5c5c5;
+        justify-content: center;
+        align-self: center;
+    }
+    </style>
+</head>
+<body>
+    <header class="header-container">
+
+        <nav id="nav-topo" class="nav-contacts">
+            <div class="header-redessociais">
+                <a href="https://www.instagram.com/notusdobrasil" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+            
+            <div id="google_translate_element"></div>
+
+            
+
+            <div class="header-bandeiras">    
+                <div class="flags">
+                    <img src="image/br.png" alt="Português" id="pt">
+                    <img src="image/es.png" id="es" alt="es">
+                    <img src="image/us.png" alt="English" id="en">
+                </div>
+            </div>
+
+        </nav>
+        <nav id="nav-fixo" class="nav-navegacao">
+
+            <div>
+                <a href="index.html" style="cursor:pointer;">
+                    <img class="apresentacao__image" src="./image/logo.png"></a>
+            </div>
+
+            <div class="header-busca">
+                <form id="searchFormIndex" class="search-wrapper">
+                <input
+                    type="text"
+                    id="searchInputIndex"
+                    name="search"
+                    placeholder="Buscar"
+                    required
+                />
+                <button type="submit" class="search-button">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                </form>
+                <i class="icon-filter fa-solid fa-filter" onclick="toggleFiltroAvancado()" ><p >Filtros</p></i>
+            </div>
+
+            <span class="hamburguer" id="hamburguer-menu">
+                <i class="fa-solid fa-bars"></i>
+            </span>
+            <div class="menu_lateral" id="menu-lateral">
+                    <a class="link_menu" href="todosprodutos.html">Todos Produtos</a>
+                    <div class="dropdown">
+                        <a class="link_menu_lateral">Categorias&nbsp;<i class="fa-solid fa-caret-down"></i></a>
+                            <ul class="submenu">
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador">Radiador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=intercooler">Intercooler</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=gmv">GMV</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=eletroventilador">Eletroventilador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=condensador">Condensador</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=evaporadora">Evaporadora</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo motor">Radiador de óleo motor</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de óleo transmissão">Radiador de óleo transmissão</a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                                <li class="has-submenu">
+                                    <a href="categoria.html?cat=radiador de aquecimento">Radiador de aquecimento </a>
+                                    <ul class="submenu-2">
+                                        <!-- Itens serão preenchidos dinamicamente -->
+                                    </ul>
+                                </li>
+                            </ul>
+                    </div>
+                    <a id="userLink" href="login.html" style="font-size:30px; cursor:pointer; position:relative;">
+                    <i id="userIcon" class="fa-solid fa-user" style="color: #134596;"></i>
+                    </a>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenuCarrinho()">
+                        <i style="font-size:30px;cursor:pointer" class="fa-solid fa-cart-shopping"></i>
+                    </span>
+                    <span style="font-size:30px;cursor:pointer" onclick="toggleMenu()">
+                        <i class="fa-regular fa-heart"></i>
+                    </span>
+            </div>
+
+            <div id="menuoculto2" class="menuoculto2">
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Montadoras</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('montadoras')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchMontadoras"
+          placeholder="Buscar montadoras..."
+          onInput="filterCheckboxesMontadoras()"
+          style="padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer" class="checkbox-container"></div>
+  </div>
+
+  <div class="escolha_catalogo">
+    <div class="header-categoria">
+      <h3 class="colorCategoria">Categorias</h3>
+      <div class="header-filtros">
+        <button class="select-all-btn" onclick="toggleAllCheckboxes('categorias')">
+          <i class="fa-solid fa-check-double"></i>
+          Selecionar Todos
+        </button>
+        <input
+          type="text"
+          id="searchCategorias"
+          placeholder="Buscar categorias..."
+          onInput="filterCheckboxesCategorias()"
+          style=" padding: 5px; border-radius: 4px; border: 1px solid #ccc;"
+        />
+      </div>
+    </div>
+    <div id="checkboxContainer2" class="checkbox-container"></div>
+  </div>
+
+  <!-- botões de ação -->
+  <div class="menuoculto2-actions">
+    <button
+      type="button"
+      class="buscar-btn"
+      onclick="fecharNav2()"
+    >
+      🔎
+    </button>
+    <button
+      type="button"
+      class="fechar-btn"
+      onclick="apenasFecharNav2()"
+    >
+      ×
+    </button>
+  </div>
+</div>
+        </nav>
+    </header>
+
+    <!-- Filtro Avançado -->
+    <div id="filtroAvancado" class="filtro-avancado" style="display: none;">
+        <div class="filtro-avancado-header">
+            <span>FILTRO AVANÇADO</span>
+        </div>
+        <div class="filtro-avancado-content">
+            <div class="filtro-row">
+                <!-- Accordion para Tipo de Produto (Categoria) -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('categoria')">
+                        <span>TIPO DE PRODUTO</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-categoria">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar tipo de produto..." id="search-categoria" oninput="filtrarOpcoes('categoria', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-categoria">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Accordion para Montadora -->
+                <div class="filtro-accordion">
+                    <div class="filtro-accordion-header" onclick="toggleAccordion('montadora')">
+                        <span>MONTADORA</span>
+                        <i class="fa-solid fa-chevron-down filtro-accordion-icon"></i>
+                    </div>
+                    <div class="filtro-accordion-content" id="accordion-montadora">
+                        <div class="filtro-accordion-body">
+                            <input type="text" class="filtro-search" placeholder="Buscar montadora..." id="search-montadora" oninput="filtrarOpcoes('montadora', this.value)">
+                            <div class="filtro-checkbox-list" id="lista-montadora">
+                                <!-- Checkboxes serão inseridos aqui dinamicamente -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campos de Ano e Busca Geral -->
+                <input type="number" id="filtroAnoInicio" placeholder="ANO INÍC" class="filtro-input-ano" min="1900" max="2030">
+                <input type="number" id="filtroAnoFim" placeholder="ANO FIM" class="filtro-input-ano" min="1900" max="2030">
+                
+                <!-- Dropdown para seleção de campo de busca -->
+                <div class="filtro-busca-container">
+                    <div class="filtro-campo-accordion">
+                        <div class="filtro-campo-header" onclick="toggleCampoAccordion()">
+                            <span id="campo-selecionado">BUSCAR EM</span>
+                            <i class="fa-solid fa-chevron-down filtro-campo-icon"></i>
+                        </div>
+                        <div class="filtro-campo-content" id="filtro-campo-dropdown">
+                            <div class="filtro-campo-list">
+                                <div class="filtro-campo-item" onclick="selecionarCampo('todos', 'BUSCAR EM')">TODOS</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('categoria', 'CATEGORIA')">CATEGORIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('montadora', 'MONTADORA')">MONTADORA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('modelo', 'MODELO')">MODELO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('codigo', 'CÓDIGO')">CÓDIGO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('referencia', 'REFERÊNCIA')">REFERÊNCIA</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('descricao', 'DESCRIÇÃO')">DESCRIÇÃO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('ano', 'ANO')">ANO</div>
+                                <div class="filtro-campo-item" onclick="selecionarCampo('placa', 'PLACA')">PLACA</div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="text" id="filtroBuscaGeral" placeholder="Código, descrição, modelo do veículo" class="filtro-input-wide">
+                </div>
+                
+                <!-- Botões -->
+                <button type="button" id="btnLimparFiltros" class="filtro-btn-limpar">LIMPAR</button>
+                <button type="button" id="btnBuscarAvancado" class="filtro-btn-buscar">BUSCAR</button>
+            </div>
+        </div>
+    </div>
+
+    <aside id="menuoculto" class="menuoculto">
+        <button class="btnFechar" onclick="fecharNav()" aria-label="Fechar menu">&times;</button>
+        
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-heart" style="font-size: 20px; color: #fff;"></i>
+                Meus Favoritos
+            </div>
+
+            <div id="cart-items" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="toggleAllButton" onclick="toggleAllFavorites()" class="action-button">
+                    <i class="fa-solid fa-check-double"></i>
+                    Marcar Todos
+                </button>
+                <button id="send-to-cart" onclick="sendFavoritesToCart()" class="action-button">
+                    <i class="fa-solid fa-arrow-right"></i>
+                    Enviar ao carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Menu oculto para o carrinho -->
+    <aside id="menuoculto-carrinho" class="menuoculto">      
+        <button class="btnFechar" onclick="fecharNavCarrinho()" aria-label="Fechar menu">&times;</button>
+        <div class="menu-content">
+            <div id="cart-total" class="counter-list-favorites">
+                <i class="fa-solid fa-cart-shopping" style="color: #fff; font-size: 20px;"></i>
+                Meu Carrinho
+            </div>
+            
+            <div id="cart-items-carrinho" class="cart-items-container">
+                <!-- Itens do carrinho serão adicionados aqui -->
+            </div>
+
+            <div class="menu-actions">
+                <button id="checkoutButtonCarrinho" onclick="window.location.href =
+                    `carrinho.html`;" class="action-button">
+                    <i class="fa-solid fa-shopping-cart"></i>
+                    Ir para o Carrinho
+                </button>
+                <button id="limpar-carrinho" onclick="limparCarrinho()" class="action-button">
+                    <i class="fa-solid fa-trash"></i>
+                    Limpar Carrinho
+                </button>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <!-- Botões de alternância de visualização -->
+        <div class="view-toggle-container">
+            <button class="view-toggle-btn active" id="cardViewBtn" onclick="toggleView('card')">
+                <i class="fa-solid fa-th-large"></i>
+                Cards
+            </button>
+            <button class="view-toggle-btn" id="tableViewBtn" onclick="toggleView('table')">
+                <i class="fa-solid fa-list"></i>
+                Tabela
+            </button>
+        </div>
+
+        <!-- Visualização em Cards (padrão) -->
+        <div class="card-view" id="cardView">
+            <div class="carousel-container" id="produtos-container"></div>
+        </div>
+
+        <!-- Visualização em Tabela -->
+        <div class="table-view" id="tableView" style="display: none;">
+            <table class="products-table">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Código</th>
+                        <th>Descrição</th>
+                        <th>Ano Início</th>
+                        <th>Ano Final</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="table-produtos-container">
+                </tbody>
+            </table>
+        </div>
+
+        <div id="pagination" class="pagination" style="display:flex;justify-content:center;margin:24px 0;"></div>
+        <div id="noResultsMessage" style="display: none; text-align: center; font-size: 1.2rem; font-weight: 600; color: #134596; margin: 150px 0;">Nenhum produto encontrado.</div>
+    </main>
+    <footer class="container-footer">
+        <div class="footer-containersub">
+            <div class="footer-containersub-div">
+                <h3><strong>Menu</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="https://notus.ind.br/sobre-notus/">Sobre Notus</a></li>
+                    <li><a href="https://notus.ind.br/vagas-abertas/">Trabalhe Conosco</a></li>
+                    <li><a href="https://notus.ind.br/garantia/">Garantia</a></li>
+                    <li><a href="https://notus.ind.br/representantes/">Representantes</a></li>
+                    <li><a href="https://notus.ind.br/contato/">Contato</a></li>
+                    <li><a href="https://catalogonotus.vipsoft.com.br/" target="_blank">Catálogo</a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Lista de Produtos</strong></h3>
+                <ul class="footer-lista">
+                    <li><a href="todosprodutos.html?categoria=radiador">Radiador</a></li>
+                    <li><a href="todosprodutos.html?categoria=intercooler">Intercooler</a></li>
+                    <li><a href="todosprodutos.html?categoria=gmv">GMV</a></li>
+                    <li><a href="todosprodutos.html?categoria=eletroventilador">Eletroventilador</a></li>
+                    <li><a href="todosprodutos.html?categoria=condensador">Condensador</a></li>
+                    <li><a href="todosprodutos.html?categoria=evaporadora">Evaporadora</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo motor">Radiador de óleo motor</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de óleo transmissão">Radiador de óleo transmissão</a></li>
+                    <li><a href="todosprodutos.html?categoria=radiador de aquecimento">Radiador de aquecimento </a></li>
+                </ul>
+            </div>
+            <div class="footer-containersub-div">
+                <h3><strong>Fale Conosco</strong></h3>
+                <ul class="footer-lista">
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1997</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 4210-1998</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-phone"></i><a href="tel:+551142101997">(11) 2413-6550</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-envelope"></i></i><a href="mailto:contato@notus.ind.br">contato@notus.ind.br</a></li>
+                    <li class="footer-lista-faleconosco-separador"><i class="fa-solid fa-location-dot" style="color:#134596"></i></i><a href="https://www.google.com/maps/place/Notus+Sistemas+T%C3%A9rmicos+do+Brasil/@-23.1645049,-47.2757049,1035m/data=!3m1!1e3!4m6!3m5!1s0x94cf4d1be8a34e01:0xf8318f2901fc4d14!8m2!3d-23.1645659!4d-47.2729364!16s%2Fg%2F11frdtvtn6?entry=ttu&g_ep=EgoyMDI1MDUwMy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D">Rua Projetada, 630, Salto/SP, 13329-429</a></li>
+                </ul>
+                <div class="footer-redessociais">
+                    <a href="https://www.instagram.com/notusdobrasil" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61559166240715" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.youtube.com/@NotusdoBrasil" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/notus-do-brasil" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div  class="footer-faixa">
+            <div">
+                <p>Notus Sistemas Térmicos Do Brasil © Todos os direitos reservados</p>
+            </div>
+            <div class="faixa-amarela">
+            </div>
+            <div class="faixa-verde">
+            </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <script src="./javascript/config-placa.js"></script>
+    <script src="./javascript/placa-api.js"></script>
+    <script src="./javascript/submenu-dinamico.js"></script>
+    <script>
+        // Variável global para controlar o modo de visualização
+        let currentView = 'card';
+
+        // Função para interceptar e complementar o renderProductsPage do script.js
+        let originalRenderProductsPage;
+        
+        // Aguarda o script.js carregar e então sobrescreve a função
+        document.addEventListener('DOMContentLoaded', () => {
+            // Aguarda um pouco para garantir que o script.js foi carregado
+            setTimeout(() => {
+                if (typeof renderProductsPage === 'function') {
+                    originalRenderProductsPage = renderProductsPage;
+                    window.renderProductsPage = function(produtosArray) {
+                        // Chama a função original
+                        originalRenderProductsPage(produtosArray);
+                        
+                        // Se estiver na visualização de tabela, atualiza a tabela
+                        if (currentView === 'table') {
+                            setTimeout(() => {
+                                renderTableView();
+                            }, 50);
+                        }
+                    };
+                }
+                
+                // Também intercepta a função filterProducts se existir
+                if (typeof filterProducts === 'function') {
+                    originalFilterProducts = filterProducts;
+                    window.filterProducts = function() {
+                        // Chama a função original
+                        originalFilterProducts();
+                        
+                        // Se estiver na visualização de tabela, atualiza a tabela
+                        if (currentView === 'table') {
+                            setTimeout(() => {
+                                renderTableView();
+                            }, 50);
+                        }
+                    };
+                }
+            }, 100);
+        });
+
+        // Função para alternar entre visualizações
+        function toggleView(viewType) {
+            currentView = viewType;
+            
+            const cardView = document.getElementById('cardView');
+            const tableView = document.getElementById('tableView');
+            const cardBtn = document.getElementById('cardViewBtn');
+            const tableBtn = document.getElementById('tableViewBtn');
+            
+            if (viewType === 'card') {
+                cardView.style.display = 'block';
+                tableView.style.display = 'none';
+                cardBtn.classList.add('active');
+                tableBtn.classList.remove('active');
+            } else {
+                cardView.style.display = 'none';
+                tableView.style.display = 'block';
+                cardBtn.classList.remove('active');
+                tableBtn.classList.add('active');
+                // Renderizar produtos na tabela quando mudar para visualização de tabela
+                renderTableView();
+            }
+        }
+
+        // Função para renderizar produtos na visualização de tabela
+        function renderTableView() {
+            const tableContainer = document.getElementById('table-produtos-container');
+            
+            tableContainer.innerHTML = '';
+            
+            // Usar os dados dos produtos paginados da página atual
+            if (typeof produtosPaginados !== 'undefined' && produtosPaginados.length > 0) {
+                // Agrupa produtos por código igual ao renderProductsPage
+                const produtosAgrupados = groupProductsByCode(produtosPaginados);
+                
+                // Calcula os produtos da página atual
+                const start = (currentPage - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const pageItems = produtosAgrupados.slice(start, end);
+                
+                pageItems.forEach((produtoAgrupado) => {
+                    // Usar dados do produto agrupado
+                    const codigo = produtoAgrupado.codigo;
+                    const categoria = produtoAgrupado.categoria || 'N/A';
+                    const montadoras = produtoAgrupado.montadoras ? produtoAgrupado.montadoras.join(', ') : (produtoAgrupado.montadora || 'N/A');
+                    const modelos = produtoAgrupado.modelos ? produtoAgrupado.modelos.join(', ') : (produtoAgrupado.modelo || 'N/A');
+                    
+                    // Formar descrição organizada
+                    const descricaoOrganizada = [categoria, montadoras, modelos].filter(item => item && item !== 'N/A').join(' ');
+                    
+                    // Extrair anos
+                    const anoOriginal = produtoAgrupado.ano || produtoAgrupado.anos;
+                    let anoInicio = 'N/A';
+                    let anoFinal = 'N/A';
+                    
+                    if (anoOriginal && anoOriginal !== 'TODOS') {
+                        const anoStr = String(anoOriginal);
+                        
+                        // Padrão "1999 - 2004"
+                        const rangeMatch = anoStr.match(/(\d{4})\s*-\s*(\d{4})/);
+                        if (rangeMatch) {
+                            anoInicio = rangeMatch[1];
+                            anoFinal = rangeMatch[2];
+                        }
+                        // Padrão "1998 >"
+                        else if (anoStr.includes('>')) {
+                            const anoMatch = anoStr.match(/(\d{4})/);
+                            if (anoMatch) {
+                                anoInicio = anoMatch[1];
+                                anoFinal = 'atual';
+                            }
+                        }
+                        // Padrão "< 2005"
+                        else if (anoStr.includes('<')) {
+                            const anoMatch = anoStr.match(/(\d{4})/);
+                            if (anoMatch) {
+                                anoInicio = 'N/A';
+                                anoFinal = anoMatch[1];
+                            }
+                        }
+                        // Ano único "2020"
+                        else {
+                            const anoMatch = anoStr.match(/^\d{4}$/);
+                            if (anoMatch) {
+                                anoInicio = anoMatch[0];
+                                anoFinal = anoMatch[0];
+                            }
+                            // Se tem anos múltiplos no agrupamento
+                            else if (produtoAgrupado.anos && Array.isArray(produtoAgrupado.anos)) {
+                                const anosValidos = produtoAgrupado.anos
+                                    .map(ano => String(ano))
+                                    .filter(ano => /^\d{4}$/.test(ano) && ano !== 'TODOS')
+                                    .map(ano => parseInt(ano))
+                                    .sort((a, b) => a - b);
+                                
+                                if (anosValidos.length > 0) {
+                                    anoInicio = anosValidos[0].toString();
+                                    anoFinal = anosValidos[anosValidos.length - 1].toString();
+                                }
+                            }
+                        }
+                    }
+                    
+                    const row = document.createElement('tr');
+                    
+                    row.innerHTML = `
+                        <td>
+                            <img src="${produtoAgrupado.imagem || './image/logo.png'}" alt="Produto" class="produto-img" onerror="this.style.display='none'">
+                        </td>
+                        <td class="produto-codigo">${codigo}</td>
+                        <td class="produto-descricao" title="${descricaoOrganizada}">${descricaoOrganizada}</td>
+                        <td>${anoInicio}</td>
+                        <td>${anoFinal}</td>
+                        <td class="produto-actions">
+                            <i class="fa-heart fa-regular" 
+                               data-id="${produtoAgrupado.id || codigo}"
+                               style="cursor: pointer; color: #134596;"></i>
+                            <i class="fa-solid fa-cart-shopping" 
+                               style="cursor: pointer; color: #134596;"></i>
+                        </td>
+                    `;
+                    
+                    // Adicionar evento de clique na linha para redirecionar para ficha do produto
+                    row.style.cursor = 'pointer';
+                    row.addEventListener('click', function(e) {
+                        // Não redirecionar se clicar nos ícones de ação
+                        if (!e.target.classList.contains('fa-heart') && 
+                            !e.target.classList.contains('fa-cart-shopping')) {
+                            // Encontrar o produto correspondente para obter o ID
+                            const produtoEncontrado = produtoAgrupado.produtos ? 
+                                produtoAgrupado.produtos[0] : produtoAgrupado;
+                            const produtoId = produtoEncontrado.id || codigo;
+                            window.location.href = `ficha-produto.html?id=${produtoId}`;
+                        }
+                    });
+                    
+                    // Adicionar event listeners para os ícones de favorito e carrinho
+                    const heartIcon = row.querySelector('.fa-heart');
+                    const cartIcon = row.querySelector('.fa-cart-shopping');
+                    
+                    if (heartIcon) {
+                        heartIcon.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            const produtoEncontrado = produtoAgrupado.produtos ? 
+                                produtoAgrupado.produtos[0] : produtoAgrupado;
+                            const produtoId = produtoEncontrado.id || codigo;
+                            const produtoImg = produtoEncontrado.imagem || '';
+                            
+                            toggleFavorite(produtoId, codigo, produtoImg);
+                            
+                            // Atualizar visual do ícone
+                            heartIcon.classList.toggle('fa-solid');
+                            heartIcon.classList.toggle('fa-regular');
+                            if (heartIcon.classList.contains('fa-solid')) {
+                                heartIcon.style.color = 'red';
+                                abrirNav();
+                            } else {
+                                heartIcon.style.color = '#134596';
+                            }
+                        });
+                    }
+                    
+                    if (cartIcon) {
+                        cartIcon.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            const produtoEncontrado = produtoAgrupado.produtos ? 
+                                produtoAgrupado.produtos[0] : produtoAgrupado;
+                            const produtoId = produtoEncontrado.id || codigo;
+                            const produtoImg = produtoEncontrado.imagem || '';
+                            
+                            addToCart(produtoId, codigo, produtoImg);
+                            abrirNavCarrinho();
+                        });
+                    }
+                    
+                    tableContainer.appendChild(row);
+                });
+            }
+        }
+
+        // Função para busca inteligente para busca dinâmica nos cards já renderizados
+        function searchInRenderedCards(searchTerms, card) {
+            if (!searchTerms || searchTerms.length === 0) return true;
+            
+            // Coleta todo o texto visível do card
+            const cardText = normalizeText(card.textContent || '');
+            
+            // Verifica se TODAS as palavras-chave estão presentes (considerando variações)
+            return searchTerms.every(term => {
+                const normalizedSearchTerm = normalizeTerm(term);
+                const originalTerm = normalizeText(term);
+                
+                // Busca tanto pelo termo normalizado quanto pelo termo original
+                return cardText.includes(normalizedSearchTerm) || 
+                       cardText.includes(originalTerm);
+            });
+        }
+
+        // Função para busca na visualização de tabela
+        function searchInTableRow(searchTerms, row) {
+            if (!searchTerms || searchTerms.length === 0) return true;
+            
+            const rowText = normalizeText(row.textContent || '');
+            
+            return searchTerms.every(term => {
+                const normalizedSearchTerm = normalizeTerm(term);
+                const originalTerm = normalizeText(term);
+                
+                return rowText.includes(normalizedSearchTerm) || 
+                       rowText.includes(originalTerm);
+            });
+        }
+
+        // Função para normalizar texto (remove acentos e converte para minúsculo)
+        function normalizeText(text) {
+            if (!text) return '';
+            return String(text)
+                .toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, ''); // Remove acentos
+        }
+
+        // Função para normalizar termos de busca (trata plurais e variações de gênero)
+        function normalizeTerm(term) {
+            if (!term) return '';
+            
+            let normalized = normalizeText(term);
+            
+            // Dicionário de termos específicos e suas variações
+            const termVariations = {
+                'condensador': ['condensador', 'condensadora', 'condensadores', 'condensadoras'],
+                'radiador': ['radiador', 'radiadora', 'radiadores', 'radiadora'],
+                'intercooler': ['intercooler', 'intercoolers'],
+                'eletroventilador': ['eletroventilador', 'eletroventiladora', 'eletroventiladores', 'eletroventiladoras'],
+                'evaporador': ['evaporador', 'evaporadora', 'evaporadores', 'evaporadoras'],
+                'ventilador': ['ventilador', 'ventiladora', 'ventiladores', 'ventiladoras'],
+                'gmv': ['gmv', 'gmvs']
+            };
+            
+            // Verifica se o termo corresponde a alguma variação conhecida
+            for (const [baseTerm, variations] of Object.entries(termVariations)) {
+                if (variations.includes(normalized)) {
+                    return baseTerm; // Retorna o termo base
+                }
+            }
+            
+            // Tratamento genérico para plurais e variações de gênero
+            // Remove sufixos comuns em ordem de prioridade
+            if (normalized.endsWith('ores')) {
+                return normalized.slice(0, -4) + 'or'; // ex: condensadores -> condensador
+            }
+            if (normalized.endsWith('oras')) {
+                return normalized.slice(0, -4) + 'or'; // ex: condensadoras -> condensador
+            }
+            if (normalized.endsWith('eres')) {
+                return normalized.slice(0, -4) + 'er'; // ex: intercoolers -> intercooler
+            }
+            if (normalized.endsWith('ades')) {
+                return normalized.slice(0, -4) + 'ade'; // ex: unidades -> unidade
+            }
+            if (normalized.endsWith('oes')) {
+                return normalized.slice(0, -3) + 'ao'; // ex: radiações -> radiacao
+            }
+            if (normalized.endsWith('ais')) {
+                return normalized.slice(0, -3) + 'al'; // ex: radiais -> radial
+            }
+            if (normalized.endsWith('eis')) {
+                return normalized.slice(0, -3) + 'el'; // ex: níveis -> nivel
+            }
+            if (normalized.endsWith('es')) {
+                return normalized.slice(0, -2); // ex: motores -> motor
+            }
+            if (normalized.endsWith('as')) {
+                return normalized.slice(0, -2) + 'a'; // ex: pecas -> peca
+            }
+            if (normalized.endsWith('s') && normalized.length > 3) {
+                return normalized.slice(0, -1); // ex: radiadores -> radiador
+            }
+            if (normalized.endsWith('a') && normalized.length > 3) {
+                // Tenta remover 'a' feminino: condensadora -> condensador
+                const withoutA = normalized.slice(0, -1);
+                if (withoutA.endsWith('or') || withoutA.endsWith('er') || withoutA.endsWith('ar')) {
+                    return withoutA;
+                }
+            }
+            
+            return normalized;
+        }
+
+        // Função de busca inteligente para busca dinâmica nos cards já renderizados
+        function searchInRenderedCards(searchTerms, card) {
+            if (!searchTerms || searchTerms.length === 0) return true;
+            
+            // Coleta todo o texto visível do card
+            const cardText = normalizeText(card.textContent || '');
+            
+            // Verifica se TODAS as palavras-chave estão presentes (considerando variações)
+            return searchTerms.every(term => {
+                const normalizedSearchTerm = normalizeTerm(term);
+                const originalTerm = normalizeText(term);
+                
+                // Busca tanto pelo termo normalizado quanto pelo termo original
+                return cardText.includes(normalizedSearchTerm) || 
+                       cardText.includes(originalTerm);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const input = document.getElementById('searchInputIndex'); // ou 'txtBusca'
+            const container = document.getElementById('produtos-container');
+            const tableContainer = document.getElementById('table-produtos-container');
+            const noResultsMessage = document.getElementById('noResultsMessage'); // Novo elemento
+            if (!input || !container) return;
+
+            input.addEventListener('input', () => {
+                const termo = input.value.trim();
+                
+                // Divide o termo de busca em palavras-chave individuais
+                const searchTerms = termo ? termo.split(/\s+/).filter(t => t.length > 0) : [];
+                
+                let hasResults = false; // Flag para verificar se há resultados
+                
+                if (currentView === 'card') {
+                    // Busca na visualização de cards
+                    container.querySelectorAll('.card-two').forEach(card => {
+                        const mostra = searchInRenderedCards(searchTerms, card);
+                        card.style.display = mostra ? '' : 'none';
+                        if (mostra) hasResults = true;
+                    });
+                } else {
+                    // Busca na visualização de tabela
+                    if (tableContainer) {
+                        tableContainer.querySelectorAll('tr').forEach(row => {
+                            const mostra = searchInTableRow(searchTerms, row);
+                            row.style.display = mostra ? '' : 'none';
+                            if (mostra) hasResults = true;
+                        });
+                    }
+                }
+                
+                // Mostra ou oculta a mensagem de "nenhum produto encontrado"
+                if (noResultsMessage) {
+                    noResultsMessage.style.display = hasResults ? 'none' : 'block';
+                }
+            });
+        });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const params   = new URLSearchParams(window.location.search);
+        const txtBusca = document.getElementById('txtBusca');
+
+        // 1) pré-popula campo de busca
+        const termo = params.get('search') || '';
+        if (txtBusca) txtBusca.value = termo;
+
+        // 1.1) Configura o campo selecionado baseado nos parâmetros da URL
+        const campo = params.get('campo') || 'todos';
+        if (campo && campo !== 'todos') {
+            campoSelecionado = campo;
+            // Atualizar o texto do campo selecionado
+            const textosCampo = {
+                'categoria': 'CATEGORIA',
+                'montadora': 'MONTADORA', 
+                'modelo': 'MODELO',
+                'codigo': 'CÓDIGO',
+                'referencia': 'REFERÊNCIA',
+                'descricao': 'DESCRIÇÃO',
+                'ano': 'ANO',
+                'placa': 'PLACA'
+            };
+            const textoExibir = textosCampo[campo] || 'TODOS OS CAMPOS';
+            const elementoCampo = document.getElementById('campo-selecionado');
+            if (elementoCampo) {
+                elementoCampo.textContent = textoExibir;
+            }
+            
+            // Atualizar placeholder do filtro avançado se existir
+            const inputFiltro = document.getElementById('filtroBuscaGeral');
+            if (inputFiltro && campo === 'placa') {
+                inputFiltro.placeholder = 'Digite a placa do veículo (ABC-1234)';
+                inputFiltro.value = termo;
+            }
+        }
+
+        // 2) pré-marca montadoras da URL
+        params.getAll('montadora').forEach(m => {
+            const chk = document.querySelector(
+            `#checkboxContainer input[type="checkbox"][value="${m}"]`
+            );
+            if (chk) chk.checked = true;
+        });
+
+        // 3) pré-marca categorias da URL
+        params.getAll('categoria').forEach(c => {
+            const chk = document.querySelector(
+            `#checkboxContainer2 input[type="checkbox"][value="${c}"]`
+            );
+            if (chk) chk.checked = true;
+        });
+
+        // 4) chama SEMPRE o filtro inicial - mas espera um pouco se for busca por placa
+        if (campo === 'placa' && termo) {
+            // Para busca por placa, aguarda a função estar disponível
+            setTimeout(() => {
+                if (typeof consultarPlacaEFiltrarProdutos === 'function') {
+                    consultarPlacaEFiltrarProdutos(termo);
+                } else {
+                    filterProducts();
+                }
+            }, 200);
+        } else {
+            filterProducts();
+        }
+
+        // 5) re-liga o filtro a inputs futuros
+        if (txtBusca) {
+            txtBusca.addEventListener('input', filterProducts);
+        }
+        document.querySelectorAll(
+            '#checkboxContainer input[type="checkbox"], #checkboxContainer2 input[type="checkbox"]'
+        ).forEach(chk => chk.addEventListener('change', filterProducts));
+        });
+
+        function updateFavoriteQuantity(itemId, newQuantity) {
+            newQuantity = parseInt(newQuantity); // Converte para número inteiro
+            if (newQuantity < 1) newQuantity = 1; // Garante que a quantidade mínima seja 1
+
+            const item = favorites.find(item => item.id === itemId);
+            if (item) {
+                item.quantity = newQuantity;
+                localStorage.setItem('favorites', JSON.stringify(favorites)); // Atualiza o localStorage
+                renderFavorites(); // Atualiza a interface
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Recupera o filtro do localStorage
+            const filtroCategoria = localStorage.getItem('filtroCategoria');
+            console.log("Filtro recuperado do localStorage:", filtroCategoria);
+            
+            if (filtroCategoria) {
+                // Encontra o checkbox correspondente à categoria
+                const checkboxes = document.querySelectorAll('#checkboxContainer2 input[type="checkbox"]');
+                console.log("Checkboxes encontrados:", checkboxes.length);
+                
+                checkboxes.forEach(checkbox => {
+                    console.log("Comparando:", checkbox.value, "com", filtroCategoria);
+                    if (checkbox.value === filtroCategoria) {
+                        console.log("Match encontrado! Marcando checkbox");
+                        checkbox.checked = true;
+                        // Dispara o evento de filtro
+                        filterProducts();
+                    }
+                });
+                
+                // Limpa o filtro do localStorage
+                localStorage.removeItem('filtroCategoria');
+            }
+        });
+
+        function filterCheckboxesCategorias() {
+            const query = document.getElementById('searchCategorias').value.toLowerCase();
+            const checkboxes = document.querySelectorAll('#checkboxContainer2 input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                // Usa o atributo value para filtrar e exibe/oculta o elemento pai
+                if (checkbox.value.toLowerCase().includes(query)) {
+                    checkbox.parentElement.style.display = "";
+                } else {
+                    checkbox.parentElement.style.display = "none";
+                }
+            });
+        }
+
+        function filterCheckboxesMontadoras() {
+            const query = document.getElementById('searchMontadoras').value.toLowerCase();
+            const checkboxes = document.querySelectorAll('#checkboxContainer input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                if (checkbox.value.toLowerCase().includes(query)) {
+                    checkbox.parentElement.style.display = "";
+                } else {
+                    checkbox.parentElement.style.display = "none";
+                }
+            });
+        }
+
+        // Nova função para alternar todos os checkboxes
+        function toggleAllCheckboxes(group) {
+            const container = group === 'montadoras' 
+                ? document.getElementById('checkboxContainer') 
+                : document.getElementById('checkboxContainer2');
+            if (container) {
+                const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+                let allChecked = true;
+                checkboxes.forEach(checkbox => {
+                    if (!checkbox.checked) { 
+                        allChecked = false;
+                    }
+                });
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = !allChecked;
+                });
+            }
+        }
+    </script>
+    <script>
+        // Funções do Filtro Avançado
+        function toggleFiltroAvancado() {
+            const filtro = document.getElementById('filtroAvancado');
+            
+            if (filtro.classList.contains('show')) {
+                // Esconder com animação
+                filtro.classList.remove('show');
+                setTimeout(() => {
+                    filtro.style.display = 'none';
+                }, 400); // Tempo da transição CSS
+            } else {
+                // Mostrar com animação
+                filtro.style.display = 'block';
+                // Força o reflow para que a transição funcione
+                filtro.offsetHeight;
+                filtro.classList.add('show');
+                carregarOpcoesDropdown();
+            }
+        }
+
+        function carregarOpcoesDropdown() {
+            fetch('./conversor/produtos.json')
+                .then(r => r.json())
+                .then(produtos => {
+                    // Armazenar produtos globalmente para uso na filtragem
+                    window.produtosData = produtos;
+
+                    // Carregar categorias
+                    const categorias = [...new Set(produtos.map(p => p.categoria).filter(Boolean))].sort();
+                    carregarCheckboxes('categoria', categorias);
+
+                    // Carregar todas as montadoras inicialmente
+                    const montadoras = [...new Set(produtos.map(p => p.montadora).filter(Boolean))].sort();
+                    carregarCheckboxes('montadora', montadoras);
+                })
+                .catch(console.error);
+        }
+
+        function carregarCheckboxes(tipo, opcoes) {
+            const container = document.getElementById(`lista-${tipo}`);
+            if (!container) return;
+
+            container.innerHTML = '';
+            
+            opcoes.forEach(opcao => {
+                const item = document.createElement('div');
+                item.className = 'filtro-checkbox-item';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `${tipo}-${opcao.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
+                checkbox.value = opcao;
+                checkbox.addEventListener('change', () => {
+                    atualizarContadores();
+                    // Se for categoria, atualizar montadoras quando mudar seleção
+                    if (tipo === 'categoria') {
+                        atualizarMontadorasPorCategoria();
+                    }
+                });
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = opcao.toUpperCase();
+                
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                container.appendChild(item);
+            });
+            
+            // Atualizar contadores inicialmente
+            atualizarContadores();
+        }
+
+        function atualizarMontadorasPorCategoria() {
+            if (!window.produtosData) return;
+
+            // Obter categorias selecionadas
+            const categoriasSelecionadas = Array.from(document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            let montadorasDisponiveis = [];
+            
+            if (categoriasSelecionadas.length === 0) {
+                // Se nenhuma categoria selecionada, mostrar todas as montadoras
+                montadorasDisponiveis = [...new Set(window.produtosData.map(p => p.montadora).filter(Boolean))].sort();
+            } else {
+                // Filtrar produtos pelas categorias selecionadas
+                const produtosFiltrados = window.produtosData.filter(produto => 
+                    categoriasSelecionadas.some(cat => 
+                        produto.categoria && produto.categoria.toLowerCase() === cat.toLowerCase()
+                    )
+                );
+                
+                // Obter montadoras únicas dos produtos filtrados
+                montadorasDisponiveis = [...new Set(produtosFiltrados.map(p => p.montadora).filter(Boolean))].sort();
+            }
+
+            // Salvar seleções atuais de montadora
+            const montadorasSelecionadas = Array.from(document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            // Recarregar checkboxes de montadora
+            const containerMontadora = document.getElementById('lista-montadora');
+            if (!containerMontadora) return;
+
+            containerMontadora.innerHTML = '';
+            
+            montadorasDisponiveis.forEach(montadora => {
+                const item = document.createElement('div');
+                item.className = 'filtro-checkbox-item';
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `montadora-${montadora.replace(/\s+/g, '-').replace(/[^\w-]/g, '')}`;
+                checkbox.value = montadora;
+                
+                // Manter seleção anterior se a montadora ainda estiver disponível
+                if (montadorasSelecionadas.includes(montadora)) {
+                    checkbox.checked = true;
+                }
+                
+                checkbox.addEventListener('change', atualizarContadores);
+                
+                const label = document.createElement('label');
+                label.setAttribute('for', checkbox.id);
+                label.textContent = montadora.toUpperCase();
+                
+                item.appendChild(checkbox);
+                item.appendChild(label);
+                containerMontadora.appendChild(item);
+            });
+            
+            // Atualizar contadores
+            atualizarContadores();
+        }
+
+        function toggleAccordion(tipo) {
+            const header = document.querySelector(`[onclick="toggleAccordion('${tipo}')"]`);
+            const content = document.getElementById(`accordion-${tipo}`);
+            
+            // Fechar dropdown de campo se estiver aberto
+            const campoHeader = document.querySelector('.filtro-campo-header');
+            const campoContent = document.querySelector('.filtro-campo-content');
+            if (campoHeader && campoContent) {
+                campoHeader.classList.remove('active');
+                campoContent.classList.remove('active');
+            }
+            
+            // Fechar outros accordions
+            document.querySelectorAll('.filtro-accordion-header').forEach(h => {
+                if (h !== header) {
+                    h.classList.remove('active');
+                }
+            });
+            document.querySelectorAll('.filtro-accordion-content').forEach(c => {
+                if (c !== content) {
+                    c.classList.remove('active');
+                }
+            });
+            
+            // Toggle do accordion atual
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        function toggleCampoAccordion() {
+            const accordion = document.querySelector('.filtro-campo-accordion');
+            const header = document.querySelector('.filtro-campo-header');
+            const content = document.querySelector('.filtro-campo-content');
+            
+            // Fechar outros accordions se estiverem abertos
+            document.querySelectorAll('.filtro-accordion-header').forEach(h => {
+                h.classList.remove('active');
+            });
+            document.querySelectorAll('.filtro-accordion-content').forEach(c => {
+                c.classList.remove('active');
+            });
+            
+            // Toggle do dropdown de campo
+            header.classList.toggle('active');
+            content.classList.toggle('active');
+        }
+
+        let campoSelecionado = 'todos';
+
+        function selecionarCampo(campo, texto) {
+            campoSelecionado = campo;
+            document.getElementById('campo-selecionado').textContent = texto;
+            
+            // Fechar o dropdown
+            document.querySelector('.filtro-campo-header').classList.remove('active');
+            document.querySelector('.filtro-campo-content').classList.remove('active');
+            
+            // Atualizar placeholder da busca
+            const input = document.getElementById('filtroBuscaGeral');
+            switch(campo) {
+                case 'todos':
+                    input.placeholder = 'Código, descrição, modelo do veículo';
+                    break;
+                case 'categoria':
+                    input.placeholder = 'Buscar por categoria...';
+                    break;
+                case 'montadora':
+                    input.placeholder = 'Buscar por montadora...';
+                    break;
+                case 'modelo':
+                    input.placeholder = 'Buscar por modelo...';
+                    break;
+                case 'codigo':
+                    input.placeholder = 'Buscar por código...';
+                    break;
+                case 'referencia':
+                    input.placeholder = 'Buscar por código de referência...';
+                    break;
+                case 'descricao':
+                    input.placeholder = 'Buscar por descrição...';
+                    break;
+                case 'ano':
+                    input.placeholder = 'Buscar por ano...';
+                    break;
+                case 'placa':
+                    input.placeholder = 'Digite a placa do veículo (ABC-1234)';
+                    input.classList.add('input-placa');
+                    break;
+            }
+        }
+
+        function searchInSpecificField(produto, termo, campo) {
+            const termosNormalizados = termo.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+            
+            if (campo === 'todos') {
+                // Busca em todos os campos
+                const campos = [
+                    produto.codigo,
+                    produto.descricao,
+                    produto.categoria,
+                    produto.montadora,
+                    produto.modelo,
+                    produto.ano,
+                    produto.referencia,
+                    produto.codigo_referencia,
+                    produto.codigoReferencia,
+                    produto.referenciaoriginal,
+                    produto.crossreference,
+                    produto.oem,
+                    produto.denso,
+                    produto.mahle,
+                    produto.marelli,
+                    produto.valeo,
+                    produto.visconde
+                ];
+                
+                return termosNormalizados.every(termo =>
+                    campos.some(campo => 
+                        campo && campo.toString().toLowerCase().includes(termo)
+                    )
+                );
+            } else {
+                // Busca no campo específico
+                let valorCampo = '';
+                switch(campo) {
+                    case 'categoria':
+                        valorCampo = produto.categoria;
+                        break;
+                    case 'montadora':
+                        valorCampo = produto.montadora;
+                        break;
+                    case 'modelo':
+                        valorCampo = produto.modelo;
+                        break;
+                    case 'codigo':
+                        valorCampo = produto.codigo;
+                        break;
+                    case 'referencia':
+                        // Busca em todos os campos de referência das diferentes marcas
+                        const camposReferencia = [
+                            produto.referencia,
+                            produto.codigo_referencia,
+                            produto.codigoReferencia,
+                            produto.referenciaoriginal,
+                            produto.crossreference,
+                            produto.oem,
+                            produto.denso,
+                            produto.mahle,
+                            produto.marelli,
+                            produto.valeo,
+                            produto.visconde
+                        ];
+                        
+                        // Concatena todos os valores de referência que existem
+                        valorCampo = camposReferencia
+                            .filter(campo => campo && campo !== null && campo !== '')
+                            .join(' ');
+                        break;
+                    case 'descricao':
+                        valorCampo = produto.descricao;
+                        break;
+                    case 'ano':
+                        valorCampo = produto.ano;
+                        break;
+                }
+                
+                if (!valorCampo) return false;
+                
+                const valorNormalizado = valorCampo.toString().toLowerCase();
+                return termosNormalizados.every(termo => valorNormalizado.includes(termo));
+            }
+        }
+
+        function filtrarOpcoes(tipo, termo) {
+            const lista = document.getElementById(`lista-${tipo}`);
+            const items = lista.querySelectorAll('.filtro-checkbox-item');
+            const termoBusca = termo.toLowerCase().trim();
+            
+            items.forEach(item => {
+                const label = item.querySelector('label');
+                const texto = label.textContent.toLowerCase();
+                
+                if (termoBusca === '' || texto.includes(termoBusca)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function atualizarContadores() {
+            const tipos = ['categoria', 'montadora'];
+            
+            tipos.forEach(tipo => {
+                const checkboxes = document.querySelectorAll(`#lista-${tipo} input[type="checkbox"]:checked`);
+                const header = document.querySelector(`[onclick="toggleAccordion('${tipo}')"] span`);
+                const count = checkboxes.length;
+                
+                if (count > 0) {
+                    const textoOriginal = tipo === 'categoria' ? 'TIPO DE PRODUTO' : 'MONTADORA';
+                    header.textContent = `${textoOriginal} (${count})`;
+                    header.parentElement.style.backgroundColor = '#134596';
+                    header.parentElement.style.color = 'white';
+                } else {
+                    const textoOriginal = tipo === 'categoria' ? 'TIPO DE PRODUTO' : 'MONTADORA';
+                    header.textContent = textoOriginal;
+                    header.parentElement.style.backgroundColor = '#f8f9fa';
+                    header.parentElement.style.color = '#134596';
+                }
+            });
+        }
+
+
+
+        function aplicarFiltroAvancado() {
+            // Verificar se é busca por placa
+            if (campoSelecionado === 'placa') {
+                const placa = document.getElementById('filtroBuscaGeral').value.trim();
+                
+                if (!placa) {
+                    mostrarErro('Por favor, digite uma placa para consultar.');
+                    return;
+                }
+                
+                if (!validarFormatoPlaca(placa)) {
+                    mostrarErro('Formato de placa inválido. Use o formato ABC-1234 ou ABC1D23.');
+                    return;
+                }
+                
+                // Realizar consulta da placa
+                consultarPlacaEFiltrarProdutos(placa);
+                return;
+            }
+
+            // Obter seleções múltiplas dos checkboxes
+            const categoriasSelecionadas = Array.from(document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked')).map(cb => cb.value);
+            const montadorasSelecionadas = Array.from(document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            const anoInicio = document.getElementById('filtroAnoInicio').value;
+            const anoFim = document.getElementById('filtroAnoFim').value;
+            const buscaGeral = document.getElementById('filtroBuscaGeral').value.trim();
+
+            fetch('./conversor/produtos.json')
+                .then(r => r.json())
+                .then(all => {
+                    const filtrados = all.filter(prod => {
+                        // Filtro por categoria (multi-seleção)
+                        const matchCategoria = categoriasSelecionadas.length === 0 || 
+                            (prod.categoria && categoriasSelecionadas.some(cat => 
+                                prod.categoria.toLowerCase() === cat.toLowerCase()
+                            ));
+
+                        // Filtro por montadora (multi-seleção)
+                        const matchMontadora = montadorasSelecionadas.length === 0 || 
+                            (prod.montadora && montadorasSelecionadas.some(mont => 
+                                prod.montadora.toLowerCase() === mont.toLowerCase()
+                            ));
+
+                        // Filtro por anos
+                        let matchAno = true;
+                        if (anoInicio || anoFim) {
+                            const prodAno = parseInt(prod.ano);
+                            if (!isNaN(prodAno)) {
+                                if (anoInicio && prodAno < parseInt(anoInicio)) matchAno = false;
+                                if (anoFim && prodAno > parseInt(anoFim)) matchAno = false;
+                            }
+                        }
+
+                        // Filtro por busca geral ou específica
+                        const matchBuscaGeral = !buscaGeral || 
+                            searchInSpecificField(prod, buscaGeral, campoSelecionado);
+
+                        return matchCategoria && matchMontadora && matchAno && matchBuscaGeral;
+                    });
+
+                    // Atualiza a exibição
+                    const noResultsMessage = document.getElementById('noResultsMessage');
+                    if (noResultsMessage) {
+                        noResultsMessage.style.display = filtrados.length === 0 ? 'block' : 'none';
+                    }
+                    
+                    produtosPaginados = filtrados;
+                    currentPage = 1;
+                    renderProductsPage(produtosPaginados);
+
+                    // Se estiver na visualização de tabela, atualizar a tabela também
+                    if (currentView === 'table') {
+                        setTimeout(() => {
+                            renderTableView();
+                        }, 100); // Pequeno delay para garantir que os cards foram renderizados
+                    }
+                })
+                .catch(console.error);
+        }
+
+        // Função para consultar placa e filtrar produtos na página atual
+        async function consultarPlacaEFiltrarProdutos(placa) {
+            try {
+                // Consultar dados do veículo pela placa
+                const dadosVeiculo = await consultarPlaca(placa);
+                
+                // Carregar produtos
+                const response = await fetch('./conversor/produtos.json');
+                const produtos = await response.json();
+                
+                // Buscar produtos compatíveis
+                const produtosCompativeis = buscarProdutosPorVeiculo(dadosVeiculo, produtos);
+                
+                // Atualizar exibição com produtos compatíveis
+                produtosPaginados = produtosCompativeis;
+                currentPage = 1;
+                renderProductsPage(produtosPaginados);
+
+                // Se estiver na visualização de tabela, atualizar a tabela também
+                if (currentView === 'table') {
+                    setTimeout(() => {
+                        renderTableView();
+                    }, 100);
+                }
+
+                // Mostrar mensagem informativa
+                const infoContainer = document.getElementById('produtosPaginated');
+                if (infoContainer) {
+                    // Remover banner anterior se existir
+                    const bannerExistente = infoContainer.querySelector('.placa-info-banner');
+                    if (bannerExistente) {
+                        bannerExistente.remove();
+                    }
+                    
+                    const infoHtml = `
+                        <div class="placa-info-banner" style="background: #e7f3ff; border: 1px solid #134596; border-radius: 8px; padding: 15px; margin-bottom: 20px;">
+                            <h4 style="color: #134596; margin: 0 0 10px 0;">
+                                <i class="fa-solid fa-car"></i> Busca por Placa: ${dadosVeiculo.placa}
+                            </h4>
+                            <p style="margin: 0; color: #666;">
+                                <strong>Veículo:</strong> ${dadosVeiculo.marca} ${dadosVeiculo.modelo}
+                                ${dadosVeiculo.ano ? ` (${dadosVeiculo.ano})` : ''}
+                                - <strong>${produtosCompativeis.length}</strong> produto(s) compatível(eis) encontrado(s)
+                            </p>
+                        </div>
+                    `;
+                    infoContainer.insertAdjacentHTML('afterbegin', infoHtml);
+                }
+
+                // Atualizar mensagem de resultados
+                const noResultsMessage = document.getElementById('noResultsMessage');
+                if (noResultsMessage) {
+                    noResultsMessage.style.display = produtosCompativeis.length === 0 ? 'block' : 'none';
+                }
+
+                // Fechar filtro após aplicar
+                toggleFiltroAvancado();
+                
+            } catch (error) {
+                mostrarErro(error.message);
+            }
+        }
+        
+        function limparFiltros() {
+            // Limpa todos os checkboxes
+            document.querySelectorAll('#lista-categoria input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+            document.querySelectorAll('#lista-montadora input[type="checkbox"]:checked').forEach(cb => cb.checked = false);
+            
+            // Limpa campos de ano e busca
+            document.getElementById('filtroAnoInicio').value = '';
+            document.getElementById('filtroAnoFim').value = '';
+            document.getElementById('filtroBuscaGeral').value = '';
+
+            // Reset do campo selecionado
+            campoSelecionado = 'todos';
+            document.getElementById('campo-selecionado').textContent = 'BUSCAR EM';
+            document.getElementById('filtroBuscaGeral').placeholder = 'Código, descrição, modelo do veículo';
+
+            // Recarregar todas as montadoras (sem filtro de categoria)
+            atualizarMontadorasPorCategoria();
+
+            // Atualizar contadores
+            atualizarContadores();
+
+            // Aplica filtro vazio (mostra todos os produtos)
+            aplicarFiltroAvancado();
+        }
+
+        // Event listeners para o filtro avançado
+        document.addEventListener('DOMContentLoaded', () => {
+            const btnBuscar = document.getElementById('btnBuscarAvancado');
+            if (btnBuscar) {
+                btnBuscar.addEventListener('click', aplicarFiltroAvancado);
+            }
+
+            const btnLimpar = document.getElementById('btnLimparFiltros');
+            if (btnLimpar) {
+                btnLimpar.addEventListener('click', limparFiltros);
+            }
+
+            // Enter nos campos de input (apenas anos e busca geral)
+            ['filtroAnoInicio', 'filtroAnoFim', 'filtroBuscaGeral'].forEach(id => {
+                const input = document.getElementById(id);
+                if (input) {
+                    input.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            aplicarFiltroAvancado();
+                        }
+                    });
+                }
+            });
+
+            // Event listener para fechar dropdown quando clicar fora
+            document.addEventListener('click', (e) => {
+                const campoAccordion = document.querySelector('.filtro-campo-accordion');
+                if (campoAccordion && !campoAccordion.contains(e.target)) {
+                    document.querySelector('.filtro-campo-header').classList.remove('active');
+                    document.querySelector('.filtro-campo-content').classList.remove('active');
+                }
+            });
+
+            // Exportar função para escopo global para acesso do script.js
+            window.consultarPlacaEFiltrarProdutos = consultarPlacaEFiltrarProdutos;
+        });
+    </script>
+    <script>
+        // Adiciona o comportamento do menu hamburguer
+        document.addEventListener("DOMContentLoaded", function() {
+            const hamburger = document.getElementById("hamburguer-menu");
+            const menuLateral = document.getElementById("menu-lateral");
+            hamburger.addEventListener("click", function() {
+                menuLateral.classList.toggle("open");
+            });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

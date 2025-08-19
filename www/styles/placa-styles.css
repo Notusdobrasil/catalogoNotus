@@ -1,0 +1,328 @@
+/* Estilos para funcionalidade de consulta por placa */
+
+/* Modal de resultado da placa */
+.resultado-placa-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.resultado-placa-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+.resultado-placa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #134596;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.resultado-placa-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.resultado-placa-body {
+    padding: 20px;
+}
+
+.veiculo-info {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.veiculo-info h4 {
+    margin: 0 0 10px 0;
+    color: #134596;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.veiculo-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.produtos-info {
+    text-align: center;
+}
+
+.produtos-info h4 {
+    margin: 0 0 10px 0;
+    color: #134596;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.produtos-info p {
+    margin: 0 0 15px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.btn-aplicar-filtro {
+    background-color: #134596;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-aplicar-filtro:hover {
+    background-color: #0f3a7a;
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-fechar:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Modal de erro */
+.erro-placa-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.erro-placa-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+.erro-placa-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #dc3545;
+    color: white;
+    border-radius: 8px 8px 0 0;
+}
+
+.erro-placa-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.erro-placa-body {
+    padding: 20px;
+    text-align: center;
+}
+
+.erro-placa-body p {
+    margin: 0 0 20px 0;
+    color: #666;
+    line-height: 1.5;
+}
+
+.btn-ok {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-ok:hover {
+    background-color: #c82333;
+}
+
+/* Loading overlay */
+.loading-placa-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.loading-placa-content {
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    max-width: 300px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease-out;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #134596;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 15px auto;
+}
+
+.loading-placa-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilos específicos para input de placa */
+.input-placa {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: monospace;
+}
+
+.input-placa::placeholder {
+    text-transform: none;
+    letter-spacing: normal;
+    font-family: inherit;
+}
+
+/* Badge de indicação de busca por placa */
+.badge-placa {
+    display: inline-block;
+    background-color: #134596;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .resultado-placa-content,
+    .erro-placa-content {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
+    
+    .resultado-placa-header,
+    .erro-placa-header {
+        padding: 15px;
+    }
+    
+    .resultado-placa-body,
+    .erro-placa-body {
+        padding: 15px;
+    }
+    
+    .veiculo-info {
+        padding: 12px;
+    }
+    
+    .loading-placa-content {
+        margin: 20px;
+        width: calc(100% - 40px);
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resultado-placa-header h3,
+    .erro-placa-header h3 {
+        font-size: 1rem;
+    }
+    
+    .btn-aplicar-filtro {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+    
+    .loading-spinner {
+        width: 30px;
+        height: 30px;
+        border-width: 3px;
+    }
+}

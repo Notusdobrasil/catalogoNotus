@@ -1,0 +1,411 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  background-color: #000;
+  position: fixed;
+  inset: 0;
+  background-image: url('../image/Notus-de-vista-de-cima-2.webp');
+  background-size: cover;
+  background-position: center;
+  filter: blur(12px) brightness(0.95);
+  z-index: 0;
+  pointer-events: none;
+  border:px solid #fff;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Container principal */
+.container {
+  width: 800px;
+  height: 500px;
+  margin: 170px auto;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ambos os painéis */
+.panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 30px;
+}
+
+/* Painel esquerdo: Welcome Back */
+.panel-left {
+  background: linear-gradient(145deg, #134596, #002776);
+  color: #fff;
+}
+
+.panel-left h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.panel-left p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 30px;
+  line-height: 1.4;
+}
+.panel-left button {
+  padding: 12px 40px;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.panel-left button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Painel direito: Create Account */
+.panel-right {
+  background: #fff;
+  color: #555;
+}
+.panel-right h2 {
+  color: #134596;
+  font-size: 1.8rem;
+}
+.panel-right span {
+  font-size: 0.9rem;
+  color: #999;
+  display: block;
+  margin-bottom: 10px;
+}
+.panel-right input {
+  width: 100%;
+  max-width: 300px;
+  padding: 9px 18px;
+  margin: 8px 0;
+  border: 1.5px solid #b0b0b0;
+  border-radius: 7px;
+  font-size: 1.05rem;
+  background: #f7f9fa;
+  transition: border 0.2s;
+}
+.panel-right input:focus {
+  border: 1.5px solid #134596;
+  outline: none;
+  background: #fff;
+}
+.panel-right button {
+  padding: 14px 44px;
+  border: none;
+  border-radius: 22px;
+  background: #134596;
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(19, 69, 150, 0.08);
+}
+.panel-right button:hover {
+  background: #6298f0;
+  box-shadow: 0 4px 16px rgba(19, 69, 150, 0.13);
+}
+
+/* ===== Ajustes do Footer ===== */
+.footer-faixa {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #134596;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 7% 1.2rem 7%;
+  gap: 18px;
+  z-index: 10;
+}
+.footer-faixa p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  text-align: center;
+  margin: 0 10px;
+}
+.faixa-amarela, .faixa-verde {
+  width: 60px;
+  height: 5px;
+  border-radius: 3px;
+  margin: 0;
+}
+.faixa-amarela {
+  background-color: #ffe600;
+}
+.faixa-verde {
+  background-color: #009739;
+}
+
+/* Footer vertical */
+.footer-faixa-vertical {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  z-index: 10;
+}
+.footer-texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: #134596;
+  padding: 8px 0 4px 0;
+  text-align: center;
+}
+.footer-texto p {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+}
+.faixa-azul {
+  background-color: #134596;
+  width: 100%;
+  height: 16px;
+  margin: 0;
+}
+.faixa-amarela {
+  background-color: #ffe600;
+  width: 100%;
+  height: 6px;
+  margin: 0;
+}
+.faixa-verde {
+  background-color: #009739;
+  width: 100%;
+  height: 6px;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .footer-faixa-vertical {
+    height: auto;
+  }
+  .faixa-azul {
+    height: 10px;
+  }
+  .faixa-amarela, .faixa-verde {
+    height: 4px;
+  }
+  .footer-texto p {
+    font-size: 0.85rem;
+  }
+}
+
+.alert {
+  text-align: center; /* centraliza horizontalmente */
+  display: flex;
+  align-items: center;   /* centraliza verticalmente */
+  justify-content: center;
+  font-size: 16px; /* corrigido de 518px para 16px */
+  font-family: sans-serif;
+  font-weight: 600;
+  width: 400px;
+  height: 120px;
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #134596;
+  background-image: url('../image/logo-branco.png'); /* troque pela sua imagem */
+  background-repeat: no-repeat;
+  background-position: right 10px bottom 10px;
+  background-size: 100px; /* ou 'contain' para adaptar */
+  color: white;
+  padding: 12px 20px 40px 20px; /* espaço para a imagem */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 9999;
+  transition: top 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+#alertText {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+.alert.show {
+  top: 30px;
+  opacity: 1;
+}
+
+.alert.hidden {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    width: 70%;
+    min-height: 80%;
+    margin: 60px auto;
+  }
+  .panel {
+    padding: 22px 10px;
+  }
+  .panel-left {
+    order: 2;
+  }
+  .panel-right {
+    order: 1;
+  }
+
+  .panel-right input {
+    max-width: 60%;
+    max-height: 40px;
+    margin: 6px 0;
+  }
+
+  .panel-right button {
+    padding: 10px 44px;
+    font-size: 1rem;
+  }
+
+  .panel-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .panel-left button {
+    padding: 10px 44px;
+    font-size: 1rem;
+  }
+
+  .panel-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .panel-left p {
+    margin-bottom: 15px;
+  }
+
+  .panel {
+    padding: 10px 10px;
+  }
+
+}
+
+/* Responsivo: empilha em mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 70%;
+    min-height: 80%;
+    margin: 60px auto;
+  }
+  .panel {
+    padding: 22px 10px;
+  }
+  .panel-left {
+    order: 2;
+  }
+  .panel-right {
+    order: 1;
+  }
+  .footer-faixa {
+    padding: 0.8rem 2%;
+    gap: 8px;
+  }
+
+  .footer-texto {
+    height: 40px;
+    padding: 4px 0;
+  }
+
+  .panel-right input {
+    max-width: 70%;
+    max-height: 40px;
+    margin: 3px 0;
+  }
+
+  .panel-right button {
+    padding: 10px 44px;
+    font-size: 1rem;
+  }
+
+  .panel-right h2 {
+    font-size: 1.5rem;
+  }
+
+  .panel-left button {
+    padding: 10px 44px;
+    font-size: 1rem;
+  }
+
+  .panel-left h2 {
+    font-size: 1.5rem;
+  }
+
+  .panel-left p {
+    margin-bottom: 15px;
+  }
+
+  .panel {
+    padding: 10px 10px;
+  }
+
+}
+
+@media (hover: none) and (pointer: coarse) {
+  /* Remove todos os efeitos hover em dispositivos touch */
+  .panel-left button:hover,
+  .panel-right button:hover {
+    /* Reset todos os efeitos hover */
+    transform: none !important;
+    scale: none !important;
+    background: inherit !important;
+    background-color: inherit !important;
+    color: inherit !important;
+    border: inherit !important;
+    box-shadow: inherit !important;
+    opacity: inherit !important;
+    filter: inherit !important;
+  }
+  
+  /* Desabilitar transi��es problem�ticas */
+  * {
+    transition: none !important;
+  }
+  
+  /* Manter apenas transi��es essenciais para forms */
+  input, button {
+    transition: border-color 0.2s ease !important;
+  }
+}
